@@ -1,0 +1,8 @@
+[gd_scene format=2]
+
+[node name="OmniLight7" type="OmniLight"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 24, 6 )
+light_energy = 0.619
+shadow_color = Color( 0.219608, 0.215686, 0.215686, 1 )
+shadow_bias = -2.633
+omni_range = 825.338
