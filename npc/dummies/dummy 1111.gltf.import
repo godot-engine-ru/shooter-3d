@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/gun.glb-25339fec8b655d65b607564cc00c23a0.scn"
+path="res://.import/dummy 1111.gltf-edda6171388336f54334fd5078452b36.scn"
 
 [deps]
 
-source_file="res://player/weapons/gun.glb"
-dest_files=[ "res://.import/gun.glb-25339fec8b655d65b607564cc00c23a0.scn" ]
+source_file="res://npc/dummies/dummy 1111.gltf"
+dest_files=[ "res://.import/dummy 1111.gltf-edda6171388336f54334fd5078452b36.scn" ]
 
 [params]
 

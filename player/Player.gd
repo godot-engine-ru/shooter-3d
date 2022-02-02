@@ -1,77 +1,86 @@
 extends KinematicBody
 
-export var speed = 10
-export var acceleration = 5
-export var gravity = 0.98
-export var jump_power = 30
-export var mouse_sensitivity = 10
-export var vertical_fov = 140
-export var focus_on_ready = true
+export var speed = 7
+export var ACCEL_DEFAULT = 7
+export var ACCEL_AIR = 1
+onready var accel = ACCEL_DEFAULT
+var gravity = 9.8
+export var jump = 5
+
+export var cam_accel = 40
+export var mouse_sense = 0.1
+var snap
+
+var direction = Vector3()
+var velocity = Vector3()
+var gravity_vec = Vector3()
+var movement = Vector3()
 
 onready var head = $Head
 onready var camera = $Head/Camera
 
-var velocity = Vector3.ZERO
-var mouse_delta = Vector2.ZERO
-var camera_x_rotation = 0
+var is_mouse_visible = false
 
 func _ready():
-	if focus_on_ready:
-		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	#hides the cursor
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+
 
 func _input(event):
+	if Input.is_action_just_pressed("ui_cancel"):
+		match Input.get_mouse_mode():
+			Input.MOUSE_MODE_VISIBLE:
+				Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+				is_mouse_visible = false
+			Input.MOUSE_MODE_CAPTURED:
+				Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+				is_mouse_visible = true
+
+	#get mouse input for camera rotation
 	if event is InputEventMouseMotion:
-		# Capture the mouse coordinates
-		mouse_delta = event.relative
+		if is_mouse_visible: return
+		rotate_y(deg2rad(-event.relative.x * mouse_sense))
+		head.rotate_x(deg2rad(-event.relative.y * mouse_sense))
+		head.rotation.x = clamp(head.rotation.x, deg2rad(-89), deg2rad(89))
 
 func _process(delta):
-	# Rotate camera
-	if (Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED) and (mouse_delta.length() > 0):
-		# Get rotation degrees
-		var x_delta = -mouse_delta.x * mouse_sensitivity * delta
-		var y_delta = -mouse_delta.y * mouse_sensitivity * delta
-		var temp_rot = Vector3.ZERO
+	#camera physics interpolation to reduce physics jitter on high refresh-rate monitors
+	if Engine.get_frames_per_second() > Engine.iterations_per_second:
+		camera.set_as_toplevel(true)
+		camera.global_transform.origin = camera.global_transform.origin.linear_interpolate(head.global_transform.origin, cam_accel * delta)
+		camera.rotation.y = rotation.y
+		camera.rotation.x = head.rotation.x
+	else:
+		camera.set_as_toplevel(false)
+		camera.global_transform = head.global_transform
 		
-		# Rotate the camera
-		mouse_delta = Vector2()
-		head.rotate_y(deg2rad(x_delta))
-		camera.rotate_x(deg2rad(y_delta))
-
-		# Clamp to reasonable maximums
-		temp_rot = camera.rotation_degrees
-		temp_rot.x = clamp(temp_rot.x, -vertical_fov/2, vertical_fov/2)
-		camera.rotation_degrees = temp_rot
-	
-	if Input.is_action_just_pressed("ui_cancel"):
-		if Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE:
-			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-		else:
-			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-	
-	if Input.is_action_just_pressed("primary_fire"):
-		if Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE:
-			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-
 func _physics_process(delta):
-	var head_basis = head.get_global_transform().basis
+	#get keyboard input
+	direction = Vector3.ZERO
+	var h_rot = global_transform.basis.get_euler().y
+	var f_input = Input.get_action_strength("move_backward") - Input.get_action_strength("move_forward")
+	var h_input = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
+	direction = Vector3(h_input, 0, f_input).rotated(Vector3.UP, h_rot).normalized()
 	
-	var direction = Vector3.ZERO
-	if Input.is_action_pressed("move_forward"):
-		direction -= head_basis.z
-	elif Input.is_action_pressed("move_backward"):
-		direction += head_basis.z
-	
-	if Input.is_action_pressed("move_left"):
-		direction -= head_basis.x
-	elif Input.is_action_pressed("move_right"):
-		direction += head_basis.x
-	
-	direction = direction.normalized()
-	
-	velocity = velocity.linear_interpolate(direction * speed, acceleration * delta)
-	velocity.y -= gravity
-	
+	#jumping and gravity
+	if is_on_floor():
+		snap = -get_floor_normal()
+		accel = ACCEL_DEFAULT
+		gravity_vec = Vector3.ZERO
+	else:
+		snap = Vector3.DOWN
+		accel = ACCEL_AIR
+		gravity_vec += Vector3.DOWN * gravity * delta
+		
 	if Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity.y += jump_power
+		snap = Vector3.ZERO
+		gravity_vec = Vector3.UP * jump
 	
-	velocity = move_and_slide(velocity, Vector3.UP)
+	#make it move
+	velocity = velocity.linear_interpolate(direction * speed, accel * delta)
+	movement = velocity + gravity_vec
+	
+	var __ = move_and_slide_with_snap(movement, snap, Vector3.UP)
+	
+	
+	

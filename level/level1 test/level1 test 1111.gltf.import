@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/gun.glb-25339fec8b655d65b607564cc00c23a0.scn"
+path="res://.import/level1 test 1111.gltf-2a2d81f1979b0c387b7bac9015b70c3a.scn"
 
 [deps]
 
-source_file="res://player/weapons/gun.glb"
-dest_files=[ "res://.import/gun.glb-25339fec8b655d65b607564cc00c23a0.scn" ]
+source_file="res://level/level1 test/level1 test 1111.gltf"
+dest_files=[ "res://.import/level1 test 1111.gltf-2a2d81f1979b0c387b7bac9015b70c3a.scn" ]
 
 [params]
 

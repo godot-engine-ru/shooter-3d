@@ -8,21 +8,16 @@
 
 config_version=4
 
-_global_script_classes=[ {
-"base": "Node",
-"class": "Interactable",
-"language": "GDScript",
-"path": "res://player/Interactable/Interactable.gd"
-} ]
-_global_script_class_icons={
-"Interactable": ""
-}
-
 [application]
 
 config/name="Shooter1"
-run/main_scene="res://level/Level1.tscn"
+config/description="with soundsbeard demo models"
+run/main_scene="res://level/level1.tscn"
 config/icon="res://icon.png"
+
+[gui]
+
+common/snap_controls_to_pixels=false
 
 [input]
 
