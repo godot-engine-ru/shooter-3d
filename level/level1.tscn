@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=2]
 
-[ext_resource path="res://player/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://player/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://map/loc1.tscn" type="PackedScene" id=2]
 [ext_resource path="res://ui/сrosshair.tscn" type="PackedScene" id=3]
 [ext_resource path="res://npc/dummies/dummy 1111.tscn" type="PackedScene" id=4]
