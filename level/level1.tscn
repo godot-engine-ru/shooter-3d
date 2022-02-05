@@ -1,0 +1,82 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://player/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://map/loc1.tscn" type="PackedScene" id=2]
+[ext_resource path="res://ui/сrosshair.tscn" type="PackedScene" id=3]
+[ext_resource path="res://npc/dummies/dummy 1111.tscn" type="PackedScene" id=4]
+[ext_resource path="res://npc/temp npc/zombie female/zombie female.tscn" type="PackedScene" id=5]
+[ext_resource path="res://items/temp items/rusty-metal-barrel/rusty-metal-barrel.tscn" type="PackedScene" id=6]
+[ext_resource path="res://items/temp items/oil-drum/oil-drum.tscn" type="PackedScene" id=7]
+[ext_resource path="res://items/temp items/wall console/wall console.tscn" type="PackedScene" id=8]
+[ext_resource path="res://items/temp items/severed leg/severed leg.tscn" type="PackedScene" id=9]
+[ext_resource path="res://items/temp items/severed arm/severed arm.tscn" type="PackedScene" id=10]
+[ext_resource path="res://items/temp items/sledgehammer/sledgehammer.tscn" type="PackedScene" id=11]
+
+[sub_resource type="CubeMesh" id=1]
+
+[node name="Level1" type="Spatial"]
+
+[node name="Crosshair" parent="." instance=ExtResource( 3 )]
+
+[node name="Spatial" parent="." instance=ExtResource( 2 )]
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 2, 0 )
+mesh = SubResource( 1 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 2, 15 )
+mesh = SubResource( 1 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 2, 15 )
+mesh = SubResource( 1 )
+
+[node name="MeshInstance4" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 2, -6 )
+mesh = SubResource( 1 )
+
+[node name="MeshInstance5" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 23, 2, -6 )
+mesh = SubResource( 1 )
+
+[node name="dummy 1111" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16.5585, 2.22148, 8.48398 )
+
+[node name="CSGBox" type="CSGBox" parent="."]
+transform = Transform( 0.886139, -0.46342, 0, 0.46342, 0.886139, 0, 0, 0, 1, 2.78956, 7.13786, -12.4911 )
+use_collision = true
+width = 20.9997
+height = 1.0
+depth = 8.216
+
+[node name="CSGBox2" type="CSGBox" parent="."]
+transform = Transform( -3.87344e-08, 2.02567e-08, 1, 0.832225, 0.554438, 2.10046e-08, -0.554438, 0.832225, -3.8334e-08, 54.7984, -19.5127, 3.72587 )
+use_collision = true
+width = 49.1862
+height = 1.0
+depth = 8.216
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -14.4131, 4.74627, 14.3675 )
+
+[node name="zombie female" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15.2371, 1.9786, 8.02111 )
+
+[node name="wall console" parent="." instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -18.0143, 2.07759, 8 )
+
+[node name="sledgehammer" parent="." instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15.9639, 3, 8.3756 )
+
+[node name="oil-drum" parent="." instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -14.2041, 2.00315, 7.79003 )
+
+[node name="rusty-metal-barrel" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.2683, 1.99747, 8 )
+
+[node name="severed arm" parent="." instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.2192, 3.16876, 8.28999 )
+
+[node name="severed leg" parent="." instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.5457, 2.14896, 8 )
