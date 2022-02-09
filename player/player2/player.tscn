@@ -1,0 +1,55 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://player/player.gd" type="Script" id=1]
+[ext_resource path="res://player/parent_follows.tscn" type="PackedScene" id=2]
+[ext_resource path="res://player/weapons/kriss/hands.tscn" type="PackedScene" id=3]
+[ext_resource path="res://ui/сrosshair.tscn" type="PackedScene" id=4]
+[ext_resource path="res://player/weapon_raycast.tscn" type="PackedScene" id=5]
+
+[sub_resource type="CapsuleShape" id=1]
+radius = 0.5
+height = 1.4
+
+[sub_resource type="CapsuleMesh" id=2]
+radius = 0.5
+mid_height = 1.5
+
+[node name="Player" type="KinematicBody"]
+script = ExtResource( 1 )
+speed = 5
+ACCEL_DEFAULT = 15
+jump = 4
+mouse_sense = 0.2
+
+[node name="Head" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
+shape = SubResource( 1 )
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
+visible = false
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="GunPivot" type="Spatial" parent="."]
+
+[node name="ParentFollowNode" parent="GunPivot" instance=ExtResource( 2 )]
+target_path = NodePath("../..")
+follow_speed = 14.0
+
+[node name="HandsAndVectorD" parent="GunPivot" instance=ExtResource( 3 )]
+transform = Transform( -0.00988689, 0.000283268, -0.00147282, 0.000145742, 0.009955, 0.0009363, 0.00149272, 0.000904244, -0.00984653, -0.003198, -1.52383, -0.303437 )
+
+[node name="Camera" type="Camera" parent="."]
+current = true
+
+[node name="RayCast" parent="Camera" instance=ExtResource( 5 )]
+
+[node name="ParentFollowNode" parent="Camera" instance=ExtResource( 2 )]
+target_path = NodePath("../..")
+follow_speed = 15.0
+
+[node name="Crosshair" parent="." instance=ExtResource( 4 )]

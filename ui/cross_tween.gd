@@ -12,6 +12,14 @@ onready var left_default
 
 var is_calming_down = false
 
+
+func set_color(color:Color):
+	bottom.color = color
+	top.color = color
+	left.color = color
+	right.color = color
+
+
 #Todo: rename to  ..
 func set_inaccuracity(value:int, time:float= 0.3):
 #	__ = interpolate_property(bottom,	"rect_position", bottom.rect_position,	bottom_default+Vector2.DOWN*value,	time, Tween.TRANS_QUAD, Tween.EASE_IN_OUT)
@@ -34,6 +42,11 @@ func set_inaccuracity_no_anim(value):
 	
 
 func _ready():
+	
+	
+	Game.connect("crosshair_entered_enemy", self, "on_crosshair_entered_enemy")
+	Game.connect("crosshair_exited_enemy", self, "on_crosshair_exited_enemy")
+	
 	yield(get_tree(),"idle_frame")
 	yield(get_tree(),"idle_frame")
 
@@ -41,7 +54,17 @@ func _ready():
 	top_default = top.rect_position
 	right_default = right.rect_position
 	left_default = left.rect_position
-	
+
+
+func on_crosshair_entered_enemy(collider):
+	set_color(Color.red)
+
+
+
+# maybe should also have a collider as an arg
+# (for example to draw and clear object outlines etc)
+func on_crosshair_exited_enemy():
+	set_color(Color.white)
 
 
 func animate_cross_recoil():
@@ -55,13 +78,14 @@ func animate_cross_recoil():
 
 func animate_cross_reload(time:=0.3):
 	get_owner()
-	var __
-	__ = interpolate_property(owner, "rect_rotation", owner.rect_rotation,	stepify(owner.rect_rotation+360, 360),	time, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+	interpolate_property(owner, "rect_rotation", owner.rect_rotation,	stepify(owner.rect_rotation+360, 360),	time, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 
 
 	start()
 
 
+# why this is here?
+# move to player + add/emit signal - shoot
 func _input(event):
 	event = event as InputEventMouseButton
 	if not event or not event.is_pressed(): return
@@ -69,5 +93,6 @@ func _input(event):
 	match event.button_index:
 		BUTTON_LEFT:
 			animate_cross_recoil()
+			Game.emit_signal("shoot_gun", Game.GunTypes.AUTO)
 		BUTTON_RIGHT:
 			$"../AnimationPlayer".play("cross reload")

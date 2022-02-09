@@ -23,22 +23,27 @@
 [node name="MeshInstance" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 2, 0 )
 mesh = SubResource( 1 )
+material/0 = null
 
 [node name="MeshInstance2" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 2, 15 )
 mesh = SubResource( 1 )
+material/0 = null
 
 [node name="MeshInstance3" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 2, 15 )
 mesh = SubResource( 1 )
+material/0 = null
 
 [node name="MeshInstance4" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 2, -6 )
 mesh = SubResource( 1 )
+material/0 = null
 
 [node name="MeshInstance5" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 23, 2, -6 )
 mesh = SubResource( 1 )
+material/0 = null
 
 [node name="dummy 1111" parent="." instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16.5585, 2.22148, 8.48398 )

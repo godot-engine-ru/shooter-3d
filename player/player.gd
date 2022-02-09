@@ -1,5 +1,6 @@
 extends KinematicBody
 
+
 export var speed = 7
 export var ACCEL_DEFAULT = 7
 export var ACCEL_AIR = 1
@@ -17,7 +18,6 @@ var gravity_vec = Vector3()
 var movement = Vector3()
 
 onready var head = $Head
-onready var camera = $Head/Camera
 
 var is_mouse_visible = false
 
@@ -36,23 +36,13 @@ func _input(event):
 				Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 				is_mouse_visible = true
 
-	#get mouse input for camera rotation
+	#get mouse input for head rotation
 	if event is InputEventMouseMotion:
 		if is_mouse_visible: return
 		rotate_y(deg2rad(-event.relative.x * mouse_sense))
 		head.rotate_x(deg2rad(-event.relative.y * mouse_sense))
 		head.rotation.x = clamp(head.rotation.x, deg2rad(-89), deg2rad(89))
 
-func _process(delta):
-	#camera physics interpolation to reduce physics jitter on high refresh-rate monitors
-	if Engine.get_frames_per_second() > Engine.iterations_per_second:
-		camera.set_as_toplevel(true)
-		camera.global_transform.origin = camera.global_transform.origin.linear_interpolate(head.global_transform.origin, cam_accel * delta)
-		camera.rotation.y = rotation.y
-		camera.rotation.x = head.rotation.x
-	else:
-		camera.set_as_toplevel(false)
-		camera.global_transform = head.global_transform
 		
 func _physics_process(delta):
 	#get keyboard input
@@ -80,7 +70,7 @@ func _physics_process(delta):
 	velocity = velocity.linear_interpolate(direction * speed, accel * delta)
 	movement = velocity + gravity_vec
 	
-	var __ = move_and_slide_with_snap(movement, snap, Vector3.UP)
+	move_and_slide_with_snap(movement, snap, Vector3.UP)
 	
 	
 	

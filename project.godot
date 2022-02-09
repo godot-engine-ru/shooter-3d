@@ -11,9 +11,13 @@ config_version=4
 [application]
 
 config/name="Shooter1"
-config/description="with soundsbeard demo models"
-run/main_scene="res://level/level1.tscn"
+config/description="проект из гита!"
+run/main_scene="res://proto/plan test.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+Game="*res://autoload/game.gd"
 
 [gui]
 
