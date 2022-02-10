@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://player/player2/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://proto/plan/plan with navigation.tscn" type="PackedScene" id=2]
 [ext_resource path="res://npc/temp npc/zombie female/zombie female kinematic.tscn" type="PackedScene" id=3]
 [ext_resource path="res://npc/npc_capsule_collision.tscn" type="PackedScene" id=4]
+[ext_resource path="res://npc/temp npc/zombie_ded/zombie_ded.tscn" type="PackedScene" id=5]
 
 [node name="PlanTest" type="Spatial"]
 
@@ -12,8 +13,11 @@
 [node name="Player" parent="." instance=ExtResource( 1 )]
 transform = Transform( -0.406753, 0, -0.913538, 0, 1, 0, 0.913538, 0, -0.406753, 0, 16.771, 101.747 )
 
+[node name="ZombieDed" parent="." instance=ExtResource( 5 )]
+transform = Transform( 0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 13.6402, 13.8717, 111.931 )
+
 [node name="zombie female" parent="." groups=["enemy"] instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.6204, 13.6856, 114.409 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.6204, 13.655, 114.409 )
 player_nodepath = NodePath("../Player")
 navigation_nodepath = NodePath("../GeneralPlanWithNav/Navigation")
 
@@ -21,6 +25,7 @@ navigation_nodepath = NodePath("../GeneralPlanWithNav/Navigation")
 wait_time = 2.0
 
 [node name="CollisionShape" parent="zombie female" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.909351, 0.124603 )
 
 [connection signal="timeout" from="zombie female/Timer" to="zombie female" method="_on_Timer_timeout"]
 
