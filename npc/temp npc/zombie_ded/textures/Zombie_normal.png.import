@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/Zombie_normal.png-6baee73b325b013cdf8c6708005ac529.s3tc.stex"
-path.etc2="res://.import/Zombie_normal.png-6baee73b325b013cdf8c6708005ac529.etc2.stex"
+path.s3tc="res://.import/zombie_normal.png-5f9414a8bd60b9ac0c48a5168f91b776.s3tc.stex"
+path.etc2="res://.import/zombie_normal.png-5f9414a8bd60b9ac0c48a5168f91b776.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://npc/temp npc/zombie_ded/textures/Zombie_normal.png"
-dest_files=[ "res://.import/Zombie_normal.png-6baee73b325b013cdf8c6708005ac529.s3tc.stex", "res://.import/Zombie_normal.png-6baee73b325b013cdf8c6708005ac529.etc2.stex" ]
+source_file="res://npc/temp npc/zombie_ded/textures/zombie_normal.png"
+dest_files=[ "res://.import/zombie_normal.png-5f9414a8bd60b9ac0c48a5168f91b776.s3tc.stex", "res://.import/zombie_normal.png-5f9414a8bd60b9ac0c48a5168f91b776.etc2.stex" ]
 
 [params]
 
