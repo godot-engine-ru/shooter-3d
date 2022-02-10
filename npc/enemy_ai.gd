@@ -43,14 +43,9 @@ func _physics_process(delta):
 			move_and_slide(direction.normalized()*speed)
 
 			var a = Quat(transform.basis)
-			
-#			var po = player.transform.origin
 			var po = path[path_index]
 			po.y = transform.origin.y
-			
 			var b = Quat(transform.looking_at(po, Vector3.UP).basis)
-			
-#			look_at(path[path_index], Vector3.UP)
 			var c = a.slerp(b, 0.08)
 			transform.basis = Basis(c)
 

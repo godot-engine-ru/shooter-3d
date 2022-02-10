@@ -72315,16 +72315,16 @@
   ],
   "images": [
     {
-      "uri": "textures/Zombie_baseColor.png"
+      "uri": "textures/zombie_base_color.png"
     },
     {
-      "uri": "textures/Zombie_metallicRoughness.png"
+      "uri": "textures/zombie_metallic_roughness.png"
     },
     {
-      "uri": "textures/Zombie_emissive.png"
+      "uri": "textures/zombie_emissive.png"
     },
     {
-      "uri": "textures/Zombie_normal.png"
+      "uri": "textures/zombie_normal.png"
     }
   ],
   "materials": [

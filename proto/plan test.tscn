@@ -27,6 +27,346 @@ wait_time = 2.0
 [node name="CollisionShape" parent="zombie female" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.909351, 0.124603 )
 
+[node name="zombie female6" parent="." groups=["enemy"] instance=ExtResource( 3 )]
+transform = Transform( 0.356852, 0, 0.934161, 0, 1, 0, -0.934161, 0, 0.356852, 16.1992, 13.655, 113.303 )
+player_nodepath = NodePath("../Player")
+navigation_nodepath = NodePath("../GeneralPlanWithNav/Navigation")
+
+[node name="Timer" type="Timer" parent="zombie female6"]
+wait_time = 2.0
+
+[node name="CollisionShape" parent="zombie female6" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.909351, 0.124603 )
+
+[node name="zombie female15" parent="." groups=["enemy"] instance=ExtResource( 3 )]
+transform = Transform( 0.356852, 0, 0.934161, 0, 1, 0, -0.934161, 0, 0.356852, 17.5559, 13.655, 113.303 )
+player_nodepath = NodePath("../Player")
+navigation_nodepath = NodePath("../GeneralPlanWithNav/Navigation")
+
+[node name="Timer" type="Timer" parent="zombie female15"]
+wait_time = 2.0
+
+[node name="CollisionShape" parent="zombie female15" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.909351, 0.124603 )
+
+[node name="zombie female16" parent="." groups=["enemy"] instance=ExtResource( 3 )]
+transform = Transform( 0.356852, 0, 0.934161, 0, 1, 0, -0.934161, 0, 0.356852, 18.8526, 13.655, 113.303 )
+player_nodepath = NodePath("../Player")
+navigation_nodepath = NodePath("../GeneralPlanWithNav/Navigation")
+
+[node name="Timer" type="Timer" parent="zombie female16"]
+wait_time = 2.0
+
+[node name="CollisionShape" parent="zombie female16" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.909351, 0.124603 )
+
+[node name="zombie female17" parent="." groups=["enemy"] instance=ExtResource( 3 )]
+transform = Transform( 0.356852, 0, 0.934161, 0, 1, 0, -0.934161, 0, 0.356852, 18.8526, 13.655, 114.912 )
+player_nodepath = NodePath("../Player")
+navigation_nodepath = NodePath("../GeneralPlanWithNav/Navigation")
+
+[node name="Timer" type="Timer" parent="zombie female17"]
+wait_time = 2.0
+
+[node name="CollisionShape" parent="zombie female17" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.909351, 0.124603 )
+
+[node name="zombie female18" parent="." groups=["enemy"] instance=ExtResource( 3 )]
+transform = Transform( 0.356852, 0, 0.934161, 0, 1, 0, -0.934161, 0, 0.356852, 20.6577, 13.655, 114.912 )
+player_nodepath = NodePath("../Player")
+navigation_nodepath = NodePath("../GeneralPlanWithNav/Navigation")
+
+[node name="Timer" type="Timer" parent="zombie female18"]
+wait_time = 2.0
+
+[node name="CollisionShape" parent="zombie female18" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.909351, 0.124603 )
+
+[node name="zombie female19" parent="." groups=["enemy"] instance=ExtResource( 3 )]
+transform = Transform( 0.356852, 0, 0.934161, 0, 1, 0, -0.934161, 0, 0.356852, 20.6577, 13.655, 116.414 )
+player_nodepath = NodePath("../Player")
+navigation_nodepath = NodePath("../GeneralPlanWithNav/Navigation")
+
+[node name="Timer" type="Timer" parent="zombie female19"]
+wait_time = 2.0
+
+[node name="CollisionShape" parent="zombie female19" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.909351, 0.124603 )
+
+[node name="zombie female20" parent="." groups=["enemy"] instance=ExtResource( 3 )]
+transform = Transform( 0.356852, 0, 0.934161, 0, 1, 0, -0.934161, 0, 0.356852, 22.3392, 13.655, 116.414 )
+player_nodepath = NodePath("../Player")
+navigation_nodepath = NodePath("../GeneralPlanWithNav/Navigation")
+
+[node name="Timer" type="Timer" parent="zombie female20"]
+wait_time = 2.0
+
+[node name="CollisionShape" parent="zombie female20" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.909351, 0.124603 )
+
+[node name="zombie female21" parent="." groups=["enemy"] instance=ExtResource( 3 )]
+transform = Transform( 0.356852, 0, 0.934161, 0, 1, 0, -0.934161, 0, 0.356852, 21.2014, 13.655, 118.219 )
+player_nodepath = NodePath("../Player")
+navigation_nodepath = NodePath("../GeneralPlanWithNav/Navigation")
+
+[node name="Timer" type="Timer" parent="zombie female21"]
+wait_time = 2.0
+
+[node name="CollisionShape" parent="zombie female21" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.909351, 0.124603 )
+
+[node name="zombie female22" parent="." groups=["enemy"] instance=ExtResource( 3 )]
+transform = Transform( 0.356852, 0, 0.934161, 0, 1, 0, -0.934161, 0, 0.356852, 22.8663, 13.655, 118.219 )
+player_nodepath = NodePath("../Player")
+navigation_nodepath = NodePath("../GeneralPlanWithNav/Navigation")
+
+[node name="Timer" type="Timer" parent="zombie female22"]
+wait_time = 2.0
+
+[node name="CollisionShape" parent="zombie female22" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.909351, 0.124603 )
+
+[node name="zombie female23" parent="." groups=["enemy"] instance=ExtResource( 3 )]
+transform = Transform( 0.356852, 0, 0.934161, 0, 1, 0, -0.934161, 0, 0.356852, 22.8663, 13.655, 119.851 )
+player_nodepath = NodePath("../Player")
+navigation_nodepath = NodePath("../GeneralPlanWithNav/Navigation")
+
+[node name="Timer" type="Timer" parent="zombie female23"]
+wait_time = 2.0
+
+[node name="CollisionShape" parent="zombie female23" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.909351, 0.124603 )
+
+[node name="zombie female7" parent="." groups=["enemy"] instance=ExtResource( 3 )]
+transform = Transform( 0.356852, 0, 0.934161, 0, 1, 0, -0.934161, 0, 0.356852, 16.1992, 13.655, 111.098 )
+player_nodepath = NodePath("../Player")
+navigation_nodepath = NodePath("../GeneralPlanWithNav/Navigation")
+
+[node name="Timer" type="Timer" parent="zombie female7"]
+wait_time = 2.0
+
+[node name="CollisionShape" parent="zombie female7" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.909351, 0.124603 )
+
+[node name="zombie female8" parent="." groups=["enemy"] instance=ExtResource( 3 )]
+transform = Transform( 0.356852, 0, 0.934161, 0, 1, 0, -0.934161, 0, 0.356852, 20.6365, 13.655, 111.098 )
+player_nodepath = NodePath("../Player")
+navigation_nodepath = NodePath("../GeneralPlanWithNav/Navigation")
+
+[node name="Timer" type="Timer" parent="zombie female8"]
+wait_time = 2.0
+
+[node name="CollisionShape" parent="zombie female8" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.909351, 0.124603 )
+
+[node name="zombie female9" parent="." groups=["enemy"] instance=ExtResource( 3 )]
+transform = Transform( 0.356852, 0, 0.934161, 0, 1, 0, -0.934161, 0, 0.356852, 20.6365, 13.655, 113.121 )
+player_nodepath = NodePath("../Player")
+navigation_nodepath = NodePath("../GeneralPlanWithNav/Navigation")
+
+[node name="Timer" type="Timer" parent="zombie female9"]
+wait_time = 2.0
+
+[node name="CollisionShape" parent="zombie female9" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.909351, 0.124603 )
+
+[node name="zombie female10" parent="." groups=["enemy"] instance=ExtResource( 3 )]
+transform = Transform( 0.356852, 0, 0.934161, 0, 1, 0, -0.934161, 0, 0.356852, 23.3614, 13.655, 113.121 )
+player_nodepath = NodePath("../Player")
+navigation_nodepath = NodePath("../GeneralPlanWithNav/Navigation")
+
+[node name="Timer" type="Timer" parent="zombie female10"]
+wait_time = 2.0
+
+[node name="CollisionShape" parent="zombie female10" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.909351, 0.124603 )
+
+[node name="zombie female11" parent="." groups=["enemy"] instance=ExtResource( 3 )]
+transform = Transform( 0.356852, 0, 0.934161, 0, 1, 0, -0.934161, 0, 0.356852, 23.3614, 13.655, 114.667 )
+player_nodepath = NodePath("../Player")
+navigation_nodepath = NodePath("../GeneralPlanWithNav/Navigation")
+
+[node name="Timer" type="Timer" parent="zombie female11"]
+wait_time = 2.0
+
+[node name="CollisionShape" parent="zombie female11" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.909351, 0.124603 )
+
+[node name="zombie female12" parent="." groups=["enemy"] instance=ExtResource( 3 )]
+transform = Transform( 0.356852, 0, 0.934161, 0, 1, 0, -0.934161, 0, 0.356852, 26.4908, 13.655, 114.667 )
+player_nodepath = NodePath("../Player")
+navigation_nodepath = NodePath("../GeneralPlanWithNav/Navigation")
+
+[node name="Timer" type="Timer" parent="zombie female12"]
+wait_time = 2.0
+
+[node name="CollisionShape" parent="zombie female12" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.909351, 0.124603 )
+
+[node name="zombie female13" parent="." groups=["enemy"] instance=ExtResource( 3 )]
+transform = Transform( 0.356852, 0, 0.934161, 0, 1, 0, -0.934161, 0, 0.356852, 26.4908, 13.655, 116.867 )
+player_nodepath = NodePath("../Player")
+navigation_nodepath = NodePath("../GeneralPlanWithNav/Navigation")
+
+[node name="Timer" type="Timer" parent="zombie female13"]
+wait_time = 2.0
+
+[node name="CollisionShape" parent="zombie female13" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.909351, 0.124603 )
+
+[node name="zombie female14" parent="." groups=["enemy"] instance=ExtResource( 3 )]
+transform = Transform( 0.356852, 0, 0.934161, 0, 1, 0, -0.934161, 0, 0.356852, 26.4908, 13.655, 118.622 )
+player_nodepath = NodePath("../Player")
+navigation_nodepath = NodePath("../GeneralPlanWithNav/Navigation")
+
+[node name="Timer" type="Timer" parent="zombie female14"]
+wait_time = 2.0
+
+[node name="CollisionShape" parent="zombie female14" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.909351, 0.124603 )
+
+[node name="zombie female2" parent="." groups=["enemy"] instance=ExtResource( 3 )]
+transform = Transform( 0.308884, 0, 0.9511, 0, 1, 0, -0.9511, 0, 0.308884, 13.6204, 13.655, 110.458 )
+player_nodepath = NodePath("../Player")
+navigation_nodepath = NodePath("../GeneralPlanWithNav/Navigation")
+
+[node name="Timer" type="Timer" parent="zombie female2"]
+wait_time = 2.0
+
+[node name="CollisionShape" parent="zombie female2" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.909351, 0.124603 )
+
+[node name="zombie female24" parent="." groups=["enemy"] instance=ExtResource( 3 )]
+transform = Transform( 0.308884, 0, 0.9511, 0, 1, 0, -0.9511, 0, 0.308884, 13.6204, 13.655, 108.286 )
+player_nodepath = NodePath("../Player")
+navigation_nodepath = NodePath("../GeneralPlanWithNav/Navigation")
+
+[node name="Timer" type="Timer" parent="zombie female24"]
+wait_time = 2.0
+
+[node name="CollisionShape" parent="zombie female24" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.909351, 0.124603 )
+
+[node name="zombie female25" parent="." groups=["enemy"] instance=ExtResource( 3 )]
+transform = Transform( 0.308884, 0, 0.9511, 0, 1, 0, -0.9511, 0, 0.308884, 16.0021, 13.655, 108.286 )
+player_nodepath = NodePath("../Player")
+navigation_nodepath = NodePath("../GeneralPlanWithNav/Navigation")
+
+[node name="Timer" type="Timer" parent="zombie female25"]
+wait_time = 2.0
+
+[node name="CollisionShape" parent="zombie female25" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.909351, 0.124603 )
+
+[node name="zombie female26" parent="." groups=["enemy"] instance=ExtResource( 3 )]
+transform = Transform( 0.308884, 0, 0.9511, 0, 1, 0, -0.9511, 0, 0.308884, 17.2428, 13.655, 108.286 )
+player_nodepath = NodePath("../Player")
+navigation_nodepath = NodePath("../GeneralPlanWithNav/Navigation")
+
+[node name="Timer" type="Timer" parent="zombie female26"]
+wait_time = 2.0
+
+[node name="CollisionShape" parent="zombie female26" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.909351, 0.124603 )
+
+[node name="zombie female27" parent="." groups=["enemy"] instance=ExtResource( 3 )]
+transform = Transform( 0.308884, 0, 0.9511, 0, 1, 0, -0.9511, 0, 0.308884, 18.9012, 13.655, 108.286 )
+player_nodepath = NodePath("../Player")
+navigation_nodepath = NodePath("../GeneralPlanWithNav/Navigation")
+
+[node name="Timer" type="Timer" parent="zombie female27"]
+wait_time = 2.0
+
+[node name="CollisionShape" parent="zombie female27" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.909351, 0.124603 )
+
+[node name="zombie female28" parent="." groups=["enemy"] instance=ExtResource( 3 )]
+transform = Transform( 0.308884, 0, 0.9511, 0, 1, 0, -0.9511, 0, 0.308884, 21.3117, 13.655, 108.286 )
+player_nodepath = NodePath("../Player")
+navigation_nodepath = NodePath("../GeneralPlanWithNav/Navigation")
+
+[node name="Timer" type="Timer" parent="zombie female28"]
+wait_time = 2.0
+
+[node name="CollisionShape" parent="zombie female28" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.909351, 0.124603 )
+
+[node name="zombie female29" parent="." groups=["enemy"] instance=ExtResource( 3 )]
+transform = Transform( 0.308884, 0, 0.9511, 0, 1, 0, -0.9511, 0, 0.308884, 24.8572, 13.655, 108.286 )
+player_nodepath = NodePath("../Player")
+navigation_nodepath = NodePath("../GeneralPlanWithNav/Navigation")
+
+[node name="Timer" type="Timer" parent="zombie female29"]
+wait_time = 2.0
+
+[node name="CollisionShape" parent="zombie female29" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.909351, 0.124603 )
+
+[node name="zombie female3" parent="." groups=["enemy"] instance=ExtResource( 3 )]
+transform = Transform( 0.308884, 0, 0.9511, 0, 1, 0, -0.9511, 0, 0.308884, 29.3666, 13.655, 110.458 )
+player_nodepath = NodePath("../Player")
+navigation_nodepath = NodePath("../GeneralPlanWithNav/Navigation")
+
+[node name="Timer" type="Timer" parent="zombie female3"]
+wait_time = 2.0
+
+[node name="CollisionShape" parent="zombie female3" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.909351, 0.124603 )
+
+[node name="zombie female4" parent="." groups=["enemy"] instance=ExtResource( 3 )]
+transform = Transform( 0.308884, 0, 0.9511, 0, 1, 0, -0.9511, 0, 0.308884, 29.3666, 13.655, 115.158 )
+player_nodepath = NodePath("../Player")
+navigation_nodepath = NodePath("../GeneralPlanWithNav/Navigation")
+
+[node name="Timer" type="Timer" parent="zombie female4"]
+wait_time = 2.0
+
+[node name="CollisionShape" parent="zombie female4" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.909351, 0.124603 )
+
+[node name="zombie female5" parent="." groups=["enemy"] instance=ExtResource( 3 )]
+transform = Transform( 0.308884, 0, 0.9511, 0, 1, 0, -0.9511, 0, 0.308884, 29.3666, 13.655, 119.938 )
+player_nodepath = NodePath("../Player")
+navigation_nodepath = NodePath("../GeneralPlanWithNav/Navigation")
+
+[node name="Timer" type="Timer" parent="zombie female5"]
+wait_time = 2.0
+
+[node name="CollisionShape" parent="zombie female5" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.909351, 0.124603 )
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.842575, 0.53858, 0, -0.53858, 0.842575, 0, 0, 0 )
+shadow_enabled = true
+
 [connection signal="timeout" from="zombie female/Timer" to="zombie female" method="_on_Timer_timeout"]
+[connection signal="timeout" from="zombie female6/Timer" to="zombie female6" method="_on_Timer_timeout"]
+[connection signal="timeout" from="zombie female15/Timer" to="zombie female15" method="_on_Timer_timeout"]
+[connection signal="timeout" from="zombie female16/Timer" to="zombie female16" method="_on_Timer_timeout"]
+[connection signal="timeout" from="zombie female17/Timer" to="zombie female17" method="_on_Timer_timeout"]
+[connection signal="timeout" from="zombie female18/Timer" to="zombie female18" method="_on_Timer_timeout"]
+[connection signal="timeout" from="zombie female19/Timer" to="zombie female19" method="_on_Timer_timeout"]
+[connection signal="timeout" from="zombie female20/Timer" to="zombie female20" method="_on_Timer_timeout"]
+[connection signal="timeout" from="zombie female21/Timer" to="zombie female21" method="_on_Timer_timeout"]
+[connection signal="timeout" from="zombie female22/Timer" to="zombie female22" method="_on_Timer_timeout"]
+[connection signal="timeout" from="zombie female23/Timer" to="zombie female23" method="_on_Timer_timeout"]
+[connection signal="timeout" from="zombie female7/Timer" to="zombie female7" method="_on_Timer_timeout"]
+[connection signal="timeout" from="zombie female8/Timer" to="zombie female8" method="_on_Timer_timeout"]
+[connection signal="timeout" from="zombie female9/Timer" to="zombie female9" method="_on_Timer_timeout"]
+[connection signal="timeout" from="zombie female10/Timer" to="zombie female10" method="_on_Timer_timeout"]
+[connection signal="timeout" from="zombie female11/Timer" to="zombie female11" method="_on_Timer_timeout"]
+[connection signal="timeout" from="zombie female12/Timer" to="zombie female12" method="_on_Timer_timeout"]
+[connection signal="timeout" from="zombie female13/Timer" to="zombie female13" method="_on_Timer_timeout"]
+[connection signal="timeout" from="zombie female14/Timer" to="zombie female14" method="_on_Timer_timeout"]
+[connection signal="timeout" from="zombie female2/Timer" to="zombie female2" method="_on_Timer_timeout"]
+[connection signal="timeout" from="zombie female24/Timer" to="zombie female24" method="_on_Timer_timeout"]
+[connection signal="timeout" from="zombie female25/Timer" to="zombie female25" method="_on_Timer_timeout"]
+[connection signal="timeout" from="zombie female26/Timer" to="zombie female26" method="_on_Timer_timeout"]
+[connection signal="timeout" from="zombie female27/Timer" to="zombie female27" method="_on_Timer_timeout"]
+[connection signal="timeout" from="zombie female28/Timer" to="zombie female28" method="_on_Timer_timeout"]
+[connection signal="timeout" from="zombie female29/Timer" to="zombie female29" method="_on_Timer_timeout"]
+[connection signal="timeout" from="zombie female3/Timer" to="zombie female3" method="_on_Timer_timeout"]
+[connection signal="timeout" from="zombie female4/Timer" to="zombie female4" method="_on_Timer_timeout"]
+[connection signal="timeout" from="zombie female5/Timer" to="zombie female5" method="_on_Timer_timeout"]
 
 [editable path="GeneralPlanWithNav"]

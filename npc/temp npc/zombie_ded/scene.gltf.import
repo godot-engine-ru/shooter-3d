@@ -2,11 +2,13 @@
 
 importer="scene"
 type="PackedScene"
-valid=false
+path="res://.import/scene.gltf-e94ad53fb0c13d53807a86fab802359e.scn"
 
 [deps]
 
 source_file="res://npc/temp npc/zombie_ded/scene.gltf"
+dest_files=[ "res://.import/scene.gltf-e94ad53fb0c13d53807a86fab802359e.scn" ]
+
 [params]
 
 nodes/root_type="Spatial"
