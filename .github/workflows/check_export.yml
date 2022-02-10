@@ -18,6 +18,7 @@ jobs:
           mkdir -p bin
           mv $GODOT_SERVER_BIN bin/godot
           chmod +x bin/godot
+          ./bin/godot -e -s .github/workflows/test_script.gd >/dev/null 2>&1
           ./bin/godot -e -s .github/workflows/test_script.gd | tee report.txt 2>&1
           grep -q ERROR report.txt && exit 1
           grep -q WARNING report.txt && exit 1
