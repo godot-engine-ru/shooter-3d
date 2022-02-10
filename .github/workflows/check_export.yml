@@ -2,15 +2,16 @@ name: run checks
 on: [push, pull_request]
 
 env:
-  GODOT_SERVER_URL: https://github.com/godotengine/godot/releases/download/3.4.2-stable/Godot_v3.4.2-stable_linux_server.64.zip
-  GODOT_SERVER_BIN: Godot_v3.4.2-stable_linux_server.64
+  GODOT_SERVER_URL: https://downloads.tuxfamily.org/godotengine/3.5/beta1/Godot_v3.5-beta1_linux_headless.64.zip
+  GODOT_SERVER_BIN: Godot_v3.5-beta1_linux_headless.64
 jobs:
   build-server:
     runs-on: "ubuntu-20.04"
     steps:
       - uses: actions/checkout@v2
-      - name: Run checks
+      - name: Setup
         run: |
+          set -x
           sudo apt-get update
           sudo apt-get install wget
           wget $GODOT_SERVER_URL
@@ -18,8 +19,15 @@ jobs:
           mkdir -p bin
           mv $GODOT_SERVER_BIN bin/godot
           chmod +x bin/godot
-          ./bin/godot -e -s .github/workflows/test_script.gd >/dev/null 2>&1
-          ./bin/godot -e -s .github/workflows/test_script.gd | tee report.txt 2>&1
-          grep -q ERROR report.txt && exit 1
-          grep -q WARNING report.txt && exit 1
+      - name: Import
+        run: |
+          ./bin/godot -d -e -s .github/workflows/test_script.gd || true
+          ./bin/godot -d -e -s .github/workflows/test_script.gd 
+        timeout-minutes: 5
+        continue-on-error: false
+      - name: Export pack
+        run: |
+          ./bin/godot -e --export-pack linux data.pak
+          if [ ! -f data.pak ]; then exit 1; fi
+        timeout-minutes: 3
 
