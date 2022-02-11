@@ -36,7 +36,8 @@ jobs:
       - name: Import
         run: |
           ./bin/godot -d -e -s .github/workflows/test_script.gd || true
-          ./bin/godot -d -e -s .github/workflows/test_script.gd 
+          ./bin/godot -d -e -s .github/workflows/test_script.gd | tee report.txt 2>&1 || true
+          grep -q ERROR report.txt && exit 1
         timeout-minutes: 5
         continue-on-error: false
       - name: Export pack
