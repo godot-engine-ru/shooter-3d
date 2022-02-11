@@ -13,7 +13,7 @@ jobs:
         run: |
           set -x
           sudo apt-get update
-          sudo apt-get install wget
+          sudo apt-get install wget e2fsprogs
           wget $GODOT_SERVER_URL
           unzip ${GODOT_SERVER_BIN}.zip
           mkdir -p bin
@@ -21,7 +21,7 @@ jobs:
           chmod +x bin/godot
       - name: Check files consistency
         run: |
-          ./bin/godot -d -e -s .github/workflows/test_script.gd >/dev/null 2>&1 || true
+          ./bin/godot -e -s .github/workflows/test_script.gd >/dev/null 2>&1 || true
           count=$(git ls-files -m | wc -l)
           if [ $count -gt 0 ]; then
             echo "Inconsistent commit. The files "
@@ -35,14 +35,34 @@ jobs:
           fi
       - name: Import
         run: |
-          ./bin/godot -d -e -s .github/workflows/test_script.gd || true
-          ./bin/godot -d -e -s .github/workflows/test_script.gd | tee report.txt 2>&1 || true
-          grep -q ERROR report.txt && exit 1
+          set -x
+          touch report.txt
+          chattr +S report.txt
+          ./bin/godot --verbose -e -s .github/workflows/test_script.gd >report.txt 2>&1 || true
+          ls -l report.txt
+          grep ERROR report.txt || true
+          if grep -q ERROR report.txt; then
+            echo "Errors encountered!"
+            cat report.txt
+          else
+            tail report.txt
+          fi
         timeout-minutes: 5
         continue-on-error: false
       - name: Export pack
         run: |
-          ./bin/godot -e --export-pack linux data.pak
-          if [ ! -f data.pak ]; then exit 1; fi
+          ./bin/godot -e --export-pack linux data.pck
+          if [ ! -f data.pck ]; then exit 1; fi
         timeout-minutes: 3
+      - name: Upload report
+        if: failure()
+        uses: actions/upload-artifact@v2
+        with:
+          name: report.txt
+          path: report.txt
+      - name: Upload pack
+        uses: actions/upload-artifact@v2
+        with:
+          name: data.pck
+          path: data.pck
 
