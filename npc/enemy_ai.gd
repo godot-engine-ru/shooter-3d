@@ -15,21 +15,10 @@ var path_index = 0
 func _ready():
 	$Timer.start()
 
-var running = false
-
 func _on_Timer_timeout():
 	path = navigation.get_simple_path(global_transform.origin, player.global_transform.origin)
 	path_index = 0
 
-
-#	var v = player.global_transform.origin
-#	look_at(v, Vector3.UP)
-#	rotate_y(PI)
-#
-#	rotation.x = 0
-	
-#	if not running:
-#		Game.emit_signal("npc_state_changed", self, Game.NpcStates.RUN)
 
 var dir:=Vector3.ZERO
 
@@ -49,14 +38,4 @@ func _physics_process(delta):
 			var c = a.slerp(b, 0.08)
 			transform.basis = Basis(c)
 
-		
-		
-#			running = true
-	else:
-		pass
-#		if running:
-#			Game.emit_signal("npc_state_changed", self, Game.NpcStates.IDLE)
-#			print("stop!")
-#		running = false
-			
 
