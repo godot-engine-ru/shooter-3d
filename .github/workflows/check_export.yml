@@ -19,6 +19,20 @@ jobs:
           mkdir -p bin
           mv $GODOT_SERVER_BIN bin/godot
           chmod +x bin/godot
+      - name: Check files consistency
+        run: |
+          ./bin/godot -d -e -s .github/workflows/test_script.gd >/dev/null 2>&1 || true
+          count=$(git ls-files -m | wc -l)
+          if [ $count -gt 0 ]; then
+            echo "Inconsistent commit. The files "
+            git ls-files -m
+            echo "are modified by editor. You can do ONE of these:"
+            echo "1. If files are needed, open the project in editor,"
+            echo "   exit the editor, and commit the files adding to your PR."
+            echo "2. If files are NOT needed, add these files to .gitignore,"
+            echo "   REMOVE them from the repository and add these changes to your PR."
+            exit 1
+          fi
       - name: Import
         run: |
           ./bin/godot -d -e -s .github/workflows/test_script.gd || true
