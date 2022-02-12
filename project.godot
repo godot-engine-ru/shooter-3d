@@ -14,6 +14,7 @@ config/name="Shooter1"
 config/description="проект из гита"
 run/main_scene="res://proto/plan test.tscn"
 config/icon="res://icon.png"
+run/flush_stdout_on_print=true
 
 [autoload]
 
