@@ -97,8 +97,3 @@ func _ready():
 	player = player_scene.instance()
 	add_child(player)
 	player.transform = Transform()
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
