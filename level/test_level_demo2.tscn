@@ -13,7 +13,7 @@ albedo_color = Color( 0.545098, 0.113725, 0.113725, 1 )
 [sub_resource type="BoxShape" id=3]
 extents = Vector3( 25, 1, 25 )
 
-[node name="test_level_demo1" type="Spatial"]
+[node name="test_level_demo2" type="Spatial"]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 
