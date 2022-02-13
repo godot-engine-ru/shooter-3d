@@ -29,8 +29,7 @@ signal shoot_gun(gun_type)
 signal npc_state_changed(npc, state)
 
 func reload_game():
-#	get_tree().change_scene_to(preload("res://level/level1.tscn"))
-	get_tree().change_scene_to(preload("res://proto/plan test.tscn"))
+	get_tree().reload_current_scene()
 
 
 func _input(event):
