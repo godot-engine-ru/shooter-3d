@@ -1,14 +1,12 @@
 extends KinematicBody
 
+
 export var speed = 7
 export var ACCEL_DEFAULT = 7
 export var ACCEL_AIR = 1
 onready var accel = ACCEL_DEFAULT
 var gravity = 9.8
 export var jump = 5
-
-var LADDER_SPEED = 3
-var LADDER_ACCEL = 0.1
 
 export var cam_accel = 40
 export var mouse_sense = 0.1
@@ -28,6 +26,7 @@ var is_mouse_visible = false
 var is_on_ladder = false
 
 func _ready():
+	$Camera.set_meta("player", self)
 	#hides the cursor
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
@@ -95,7 +94,8 @@ func _physics_process(delta):
 
 
 func move_on_ladder():
-
+	var LADDER_SPEED = 8
+	var LADDER_ACCEL = 0.1
 
 	var up = Input.is_action_pressed("move_forward")
 	var down = Input.is_action_pressed("move_backward")

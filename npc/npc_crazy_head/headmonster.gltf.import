@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/level1 test 1111.gltf-2a2d81f1979b0c387b7bac9015b70c3a.scn"
+path="res://.import/headmonster.gltf-13aade9ce7d9d216c734d90280a38090.scn"
 
 [deps]
 
-source_file="res://level/level1 test/level1 test 1111.gltf"
-dest_files=[ "res://.import/level1 test 1111.gltf-2a2d81f1979b0c387b7bac9015b70c3a.scn" ]
+source_file="res://npc/npc_crazy_head/headmonster.gltf"
+dest_files=[ "res://.import/headmonster.gltf-13aade9ce7d9d216c734d90280a38090.scn" ]
 
 [params]
 
@@ -21,7 +21,7 @@ materials/location=1
 materials/storage=1
 materials/keep_on_reimport=true
 meshes/octahedral_compression=true
-meshes/compress=4286
+meshes/compress=188
 meshes/ensure_tangents=true
 meshes/storage=0
 meshes/light_baking=0

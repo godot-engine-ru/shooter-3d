@@ -16,6 +16,7 @@ func _ready():
 	$Timer.start()
 
 func _on_Timer_timeout():
+	if not navigation: return
 	path = navigation.get_simple_path(global_transform.origin, player.global_transform.origin)
 	path_index = 0
 

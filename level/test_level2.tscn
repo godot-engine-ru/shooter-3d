@@ -2,7 +2,7 @@
 
 [ext_resource path="res://level/test_level2/whole level2 111.gltf" type="PackedScene" id=1]
 [ext_resource path="res://level/portal_room/portal.tscn" type="PackedScene" id=2]
-[ext_resource path="res://player/player2/player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://player/player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://level/test_level2/test_level2_patch_1.tscn" type="PackedScene" id=4]
 
 [sub_resource type="ConcavePolygonShape" id=20]
