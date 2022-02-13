@@ -14,7 +14,7 @@ height = 1.4
 radius = 0.5
 mid_height = 1.5
 
-[node name="Player" type="KinematicBody"]
+[node name="Player" type="KinematicBody" groups=["player"]]
 script = ExtResource( 1 )
 speed = 5
 ACCEL_DEFAULT = 15

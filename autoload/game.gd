@@ -28,6 +28,10 @@ signal shoot_gun(gun_type)
 # state - int состояние (идет, бежит, атакует..)
 signal npc_state_changed(npc, state)
 
+
+signal ladder_entered
+signal ladder_exited
+
 func reload_game():
 	get_tree().reload_current_scene()
 
