@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://player/player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://proto/plan/plan with navigation.tscn" type="PackedScene" id=2]
+[ext_resource path="res://npc/temp npc/zombie female/zombie female kinematic.tscn" type="PackedScene" id=3]
+[ext_resource path="res://npc/temp npc/zombie_ded/zombie_ded.tscn" type="PackedScene" id=5]
+
+[node name="PlanTest" type="Spatial"]
+
+[node name="GeneralPlanWithNav" parent="." instance=ExtResource( 2 )]
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+transform = Transform( -0.406753, 0, -0.913538, 0, 1, 0, 0.913538, 0, -0.406753, 0, 16.771, 101.747 )
+
+[node name="ZombieDed" parent="." instance=ExtResource( 5 )]
+transform = Transform( 0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 13.6402, 13.8717, 111.931 )
+
+[node name="zombie female" parent="." groups=["enemy"] instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.6204, 13.655, 114.409 )
+player_nodepath = NodePath("../Player")
+navigation_nodepath = NodePath("../GeneralPlanWithNav/Navigation")
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.842575, 0.53858, 0, -0.53858, 0.842575, 0, 0, 0 )
+visible = false
+shadow_enabled = true
+
+[editable path="GeneralPlanWithNav"]

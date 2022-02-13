@@ -29,10 +29,9 @@ func _ready():
 	$Camera.set_meta("player", self)
 	#hides the cursor
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-<<<<<<< HEAD
-=======
+
 	$Camera.set_meta("player", self)
->>>>>>> ed3b3c7c27a9b6a08661942f847870cd8265d4ab
+
 
 	Game.connect("ladder_entered", self, "on_ladder_entered")
 	Game.connect("ladder_exited", self, "on_ladder_exited")
