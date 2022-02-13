@@ -17,7 +17,6 @@ data = PoolVector3Array( -50, 1, 50, 50, 1, 50, -50, -1, 50, 50, 1, 50, 50, -1, 
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
 mesh = SubResource( 2 )
-material/0 = null
 
 [node name="StaticBody" type="StaticBody" parent="MeshInstance"]
 
@@ -27,7 +26,6 @@ shape = SubResource( 3 )
 [node name="MeshInstance2" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3, 0 )
 mesh = SubResource( 2 )
-material/0 = null
 
 [node name="StaticBody" type="StaticBody" parent="MeshInstance2"]
 
