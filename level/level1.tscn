@@ -4,7 +4,7 @@
 [ext_resource path="res://map/loc1.tscn" type="PackedScene" id=2]
 [ext_resource path="res://ui/сrosshair.tscn" type="PackedScene" id=3]
 [ext_resource path="res://npc/dummies/dummy 1111.tscn" type="PackedScene" id=4]
-[ext_resource path="res://npc/temp npc/zombie female/zombie female.tscn" type="PackedScene" id=5]
+[ext_resource path="res://npc/temp npc/zombie female/zombie female kinematic.tscn" type="PackedScene" id=5]
 [ext_resource path="res://items/temp items/rusty-metal-barrel/rusty-metal-barrel.tscn" type="PackedScene" id=6]
 [ext_resource path="res://items/temp items/oil-drum/oil-drum.tscn" type="PackedScene" id=7]
 [ext_resource path="res://items/temp items/wall console/wall console.tscn" type="PackedScene" id=8]
