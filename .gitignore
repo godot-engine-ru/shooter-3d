@@ -3,3 +3,4 @@
 export
 logs
 npc/temp\ npc/zombie\ female/*.anim
+*.import.tmp
