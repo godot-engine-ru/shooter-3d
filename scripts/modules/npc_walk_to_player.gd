@@ -40,9 +40,10 @@ var path_index = 0
 
 func _on_Timer_timeout():
 	if not is_instance_valid(navigation): return
-	var closest_point:Vector3 = navigation.get_closest_point(player_.global_transform.origin)
+	
+#	может пригодится
+#	var closest_point:Vector3 = navigation.get_closest_point(player_.global_transform.origin)
 #	print("closest: ", closest_point.distance_squared_to(npc.global_transform.origin))
-	print("closest: ", closest_point.distance_squared_to(player_.global_transform.origin))
 	
 	path = navigation.get_simple_path(npc.global_transform.origin, player_.global_transform.origin)
 
