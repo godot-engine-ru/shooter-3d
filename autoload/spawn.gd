@@ -41,6 +41,7 @@ func spawn_everything():
 				
 var spawn_delay = 0.0
 func _ready():
+	return
 	spawn_everything()
 #	spawn_delay = 1.0
 

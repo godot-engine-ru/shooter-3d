@@ -17,6 +17,9 @@ var velocity = Vector3()
 var gravity_vec = Vector3()
 var movement = Vector3()
 
+var ladder_speed = 4
+var ladder_accel = 0.1
+
 onready var head = $Head
 
 onready var camera = $Camera
@@ -26,7 +29,6 @@ var is_mouse_visible = false
 var is_on_ladder = false
 
 func _ready():
-	$Camera.set_meta("player", self)
 	#hides the cursor
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
@@ -38,11 +40,9 @@ func _ready():
 
 func on_ladder_entered():
 	is_on_ladder = true
-	print("ladder entered")
 	
 func on_ladder_exited():
 	is_on_ladder = false
-	print("ladder exited")
 
 func _input(event):
 	if Input.is_action_just_pressed("ui_cancel"):
@@ -97,8 +97,7 @@ func _physics_process(delta):
 
 
 func move_on_ladder():
-	var LADDER_SPEED = 8
-	var LADDER_ACCEL = 0.1
+
 
 	var up = Input.is_action_pressed("move_forward")
 	var down = Input.is_action_pressed("move_backward")
@@ -120,8 +119,8 @@ func move_on_ladder():
 
 	direction = direction.normalized()
 
-	var target = direction * LADDER_SPEED
+	var target = direction * ladder_speed
 
-	velocity = velocity.linear_interpolate(target, LADDER_ACCEL)
+	velocity = velocity.linear_interpolate(target, ladder_accel)
 
 	move_and_slide(velocity)

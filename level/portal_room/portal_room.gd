@@ -66,14 +66,12 @@ func _ready():
 	var path = scene_dir.get_next()
 	var portal_paths = []
 	while path != "":
-		print(path)
 		if path.ends_with(".tscn"):
 			if path.begins_with("level"):
 				portal_paths.push_back(scene_path + "/" + path)
 			if path.begins_with("test_level"):
 				portal_paths.push_back(scene_path + "/" + path)
 		path = scene_dir.get_next()
-	print(portal_paths)
 	var radius_step = 5.0
 	var angle_step = 0.0
 	var id = 0

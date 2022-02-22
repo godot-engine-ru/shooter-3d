@@ -67,18 +67,15 @@ data = PoolVector3Array( -1.4757, -0.1559, 0.0002, -1.3036, -0.3153, 0.2888, -1.
 [node name="noth" type="MeshInstance" parent="."]
 transform = Transform( 23.8525, 0, 0, 0, 16.8929, 0, 0, 0, 16.8929, 0.208812, 1.92013, -145.528 )
 mesh = ExtResource( 6 )
-material/0 = null
 
 [node name="Text" type="MeshInstance" parent="noth"]
 transform = Transform( 0.750765, 0, 0, 0, 1.06007, 0, 0, 0, 1.06007, -0.832651, 0, 1.70452 )
 mesh = ExtResource( 9 )
-material/0 = null
 
 [node name="ground" type="MeshInstance" parent="."]
 transform = Transform( 250.821, 0, 0, 0, 250.821, 0, 0, 0, 250.821, 13.416, -0.1, 0 )
 visible = false
 mesh = ExtResource( 12 )
-material/0 = null
 
 [node name="StaticBody" type="StaticBody" parent="ground"]
 
@@ -89,150 +86,124 @@ shape = SubResource( 51 )
 transform = Transform( 1.47552, 0.00247057, -0.00272179, -0.00196656, 1.8573, -0.0174533, 0.000934792, 0.00761189, 4.25948, 0, 0, -2.74295 )
 visible = false
 mesh = ExtResource( 7 )
-material/0 = null
 
 [node name="B1 L-1" type="MeshInstance" parent="."]
 transform = Transform( 7.78682, 0, 0, 0, -1.39286e-07, -7.78685, 0, 7.78682, -8.31771e-07, 69.8269, -8.26357, 4.85167 )
 mesh = ExtResource( 8 )
 skeleton = NodePath("")
-material/0 = null
 
 [node name="B1 L-1001" type="MeshInstance" parent="."]
 transform = Transform( 7.78682, 0, 0, 0, -1.39286e-07, -7.78685, 0, 7.78682, -8.31771e-07, 69.8269, -21.543, 4.85167 )
 mesh = ExtResource( 2 )
 skeleton = NodePath("")
-material/0 = null
 
 [node name="B3 L2001" type="MeshInstance" parent="."]
 transform = Transform( 1.87087, 4.50213, -4.80906e-07, 0, -8.72074e-08, -4.87538, -4.50213, 1.87087, -1.99841e-07, 64.2543, 7.68804, 79.6048 )
 mesh = ExtResource( 10 )
 skeleton = NodePath("")
-material/0 = null
 
 [node name="B3 L2002" type="MeshInstance" parent="."]
 transform = Transform( -1.87087, -4.50212, 4.80906e-07, 0, -8.72074e-08, -4.87538, 4.50212, -1.87087, 1.99842e-07, 3.79975, 7.68803, 54.518 )
 mesh = ExtResource( 13 )
 skeleton = NodePath("")
-material/0 = null
 
 [node name="B3 L1002" type="MeshInstance" parent="."]
 transform = Transform( 1.87087, 4.50213, -4.80906e-07, 0, -8.72074e-08, -4.87538, -4.50213, 1.87087, -1.99841e-07, 64.3592, 2.54901, 79.6118 )
 mesh = ExtResource( 18 )
 skeleton = NodePath("")
-material/0 = null
 
 [node name="B3 L1001" type="MeshInstance" parent="."]
 transform = Transform( -1.87087, -4.50212, 4.80906e-07, 0, -8.72074e-08, -4.87538, 4.50212, -1.87087, 1.99842e-07, 3.69486, 2.54901, 54.5111 )
 mesh = ExtResource( 20 )
 skeleton = NodePath("")
-material/0 = null
 
 [node name="B4 L3" type="MeshInstance" parent="."]
 transform = Transform( 3.99375, -0.0611791, 6.53501e-09, 0, -7.14459e-08, -3.99422, 0.0611791, 3.99375, -4.26603e-07, -51.9298, 12.9159, 58.807 )
 mesh = ExtResource( 4 )
 skeleton = NodePath("")
-material/0 = null
 
 [node name="B4 L2" type="MeshInstance" parent="."]
 transform = Transform( 3.99375, -0.0611791, 6.53501e-09, 0, -7.14459e-08, -3.99422, 0.0611791, 3.99375, -4.26603e-07, -51.9298, 7.62612, 58.807 )
 mesh = ExtResource( 3 )
 skeleton = NodePath("")
-material/0 = null
 
 [node name="B4 L1003" type="MeshInstance" parent="."]
 transform = Transform( 3.99375, -0.0611791, 6.53501e-09, 0, -7.14459e-08, -3.99422, 0.0611791, 3.99375, -4.26603e-07, -51.9298, 2.45006, 58.807 )
 mesh = ExtResource( 5 )
 skeleton = NodePath("")
-material/0 = null
 
 [node name="B5 L3" type="MeshInstance" parent="."]
 transform = Transform( 4.7422, -2.01086, 1.42206e-07, 0, -1.39168e-07, -5.15093, 2.01086, 4.7422, -3.35363e-07, -18.4531, 15.3617, 105.532 )
 mesh = ExtResource( 11 )
 skeleton = NodePath("")
-material/0 = null
 
 [node name="B5 L2" type="MeshInstance" parent="."]
 transform = Transform( 4.7422, -2.01086, 1.42206e-07, 0, -1.39168e-07, -5.15093, 2.01086, 4.7422, -3.35363e-07, -18.4531, 8.73317, 105.532 )
 mesh = ExtResource( 24 )
 skeleton = NodePath("")
-material/0 = null
 
 [node name="B5 L1" type="MeshInstance" parent="."]
 transform = Transform( 4.7422, -2.01086, 1.42206e-07, 0, -1.39168e-07, -5.15093, 2.01086, 4.7422, -3.35363e-07, -18.4531, 3.31854, 105.532 )
 mesh = ExtResource( 26 )
 skeleton = NodePath("")
-material/0 = null
 
 [node name="B5 L-1" type="MeshInstance" parent="."]
 transform = Transform( 5.67399, -2.40597, 1.70147e-07, 0, -1.66513e-07, -6.16304, 2.40597, 5.67399, -4.01258e-07, -17.6325, -5.98412, 105.949 )
 mesh = ExtResource( 23 )
 skeleton = NodePath("")
-material/0 = null
 
 [node name="Cube008" type="MeshInstance" parent="."]
 transform = Transform( 14.9355, 0, 0, 0, 6.11184, 0, 0, 0, 11.0003, 15.965, -7.99245, -8.06575 )
 mesh = ExtResource( 21 )
-material/0 = null
 
 [node name="B6 L-1" type="MeshInstance" parent="Cube008"]
 transform = Transform( -3.09422e-08, -0.521363, 5.56909e-08, 0, -2.27895e-08, -1.27406, 0.707875, -2.27895e-08, 2.43433e-15, -1.08104, 0.103685, -0.00855696 )
 mesh = ExtResource( 25 )
-material/0 = null
 
 [node name="Circle004" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 35.8089, -11.5564, 11.3325 )
 mesh = ExtResource( 22 )
-material/0 = null
 
 [node name="B4 L1001" type="MeshInstance" parent="."]
 transform = Transform( -5.10365, -5.88114, 6.28208e-07, 0, -1.39286e-07, -7.78681, 5.88114, -5.10365, 5.45158e-07, 118.643, 4.5108, 57.5734 )
 mesh = ExtResource( 14 )
 skeleton = NodePath("")
-material/0 = null
 
 [node name="B8" type="MeshInstance" parent="."]
 transform = Transform( 5.91513, -5.06417, 4.0187e-07, 0, -1.87488e-07, -7.78684, 5.06417, 5.91513, -4.69399e-07, 107.321, 4.97955, 20.4181 )
 mesh = ExtResource( 15 )
 skeleton = NodePath("")
-material/0 = null
 
 [node name="Circle" type="MeshInstance" parent="."]
 transform = Transform( 7.30856, 0, 0, 0, 5.85423, 0, 0, 0, 7.30856, 115.858, -11.2632, 14.7764 )
 mesh = ExtResource( 16 )
-material/0 = null
 
 [node name="Circle001" type="MeshInstance" parent="."]
 transform = Transform( 7.30856, 0, 0, 0, 5.85423, 0, 0, 0, 7.30856, 104.565, -11.2632, 5.14684 )
 mesh = ExtResource( 16 )
-material/0 = null
 
 [node name="Circle002" type="MeshInstance" parent="."]
 transform = Transform( 7.30856, 0, 0, 0, 5.85423, 0, 0, 0, 7.30856, 114.334, -11.2632, -5.90962 )
 mesh = ExtResource( 16 )
-material/0 = null
 
 [node name="Circle003" type="MeshInstance" parent="."]
 transform = Transform( 7.30856, 0, 0, 0, 5.85423, 0, 0, 0, 7.30856, 125.627, -11.2632, 3.71992 )
 mesh = ExtResource( 16 )
-material/0 = null
 
 [node name="B9 L1" type="MeshInstance" parent="."]
 transform = Transform( 7.78674, 0.034731, -3.70988e-09, 0, -1.39286e-07, -7.78681, -0.034731, 7.78674, -8.31761e-07, 100.866, 4.59165, -58.2586 )
 mesh = ExtResource( 17 )
 skeleton = NodePath("")
-material/0 = null
 
 [node name="B2 L1" type="MeshInstance" parent="."]
 transform = Transform( 5.00196, -5.96784, 6.3747e-07, -5.68434e-14, -1.39285e-07, -7.78681, 5.96784, 5.00196, -5.34297e-07, 15.5361, 4.66995, -8.80792 )
 mesh = SubResource( 10 )
 skeleton = NodePath("")
-material/0 = null
 
 [node name="B2 L1001" type="MeshInstance" parent="."]
 transform = Transform( 5.00196, -5.96784, 6.3747e-07, -5.68434e-14, -1.39285e-07, -7.78681, 5.96784, 5.00196, -5.34297e-07, 15.5361, 14.6573, -8.80785 )
 mesh = ExtResource( 28 )
 skeleton = NodePath("")
-material/0 = null
 
 [node name="Navigation" type="Navigation" parent="."]
 
@@ -243,7 +214,6 @@ navmesh = SubResource( 62 )
 transform = Transform( 5.15695, 0.197845, -4.96258, 0, 5.56248, 1.19432, 2.14754, -0.475092, 11.9168, 30.2692, 9.56162, 85.0932 )
 mesh = ExtResource( 19 )
 skeleton = NodePath("../../..")
-material/0 = null
 
 [node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/Cube052"]
 
@@ -254,7 +224,6 @@ shape = SubResource( 63 )
 transform = Transform( -0.309994, 0, -40.3343, 0, 24.9314, 0, 40.3343, 0, -0.309994, -68.7654, 2.12417, 51.5266 )
 mesh = ExtResource( 1 )
 skeleton = NodePath("../../..")
-material/0 = null
 
 [node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/stairs4"]
 
@@ -265,7 +234,6 @@ shape = SubResource( 52 )
 transform = Transform( 37.1179, 0, -15.7865, 0, 24.9314, 0, 15.7865, 0, 37.1179, 22.6702, 16.7001, 106.39 )
 mesh = ExtResource( 27 )
 skeleton = NodePath("../../..")
-material/0 = null
 
 [node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/stairs5"]
 

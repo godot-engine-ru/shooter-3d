@@ -887,22 +887,18 @@ bones/52/bound_children = [  ]
 [node name="Mesh 2" type="MeshInstance" parent="RootNode gltf orientation matrix/RootNode model correction matrix/e5925612b21a4f1eb6baf1abc1b3ea53fbx/Node 2/RootNode/Node 3 2/Skeleton"]
 mesh = SubResource( 1 )
 skin = SubResource( 2 )
-material/0 = null
 
 [node name="Mesh 3 2" type="MeshInstance" parent="RootNode gltf orientation matrix/RootNode model correction matrix/e5925612b21a4f1eb6baf1abc1b3ea53fbx/Node 2/RootNode/Node 3 2/Skeleton"]
 mesh = SubResource( 3 )
 skin = SubResource( 2 )
-material/0 = null
 
 [node name="Mesh 4 2" type="MeshInstance" parent="RootNode gltf orientation matrix/RootNode model correction matrix/e5925612b21a4f1eb6baf1abc1b3ea53fbx/Node 2/RootNode/Node 3 2/Skeleton"]
 mesh = SubResource( 4 )
 skin = SubResource( 2 )
-material/0 = null
 
 [node name="Mesh 5 2" type="MeshInstance" parent="RootNode gltf orientation matrix/RootNode model correction matrix/e5925612b21a4f1eb6baf1abc1b3ea53fbx/Node 2/RootNode/Node 3 2/Skeleton"]
 mesh = SubResource( 5 )
 skin = SubResource( 2 )
-material/0 = null
 
 [node name="Node 4 2" type="Spatial" parent="RootNode gltf orientation matrix/RootNode model correction matrix/e5925612b21a4f1eb6baf1abc1b3ea53fbx/Node 2/RootNode/Node 3 2"]
 transform = Transform( 1, -2.11758e-22, 0, 2.11758e-22, 1, 0, 0, 0, 1, 7.10543e-15, -2.84217e-14, -5.32907e-15 )

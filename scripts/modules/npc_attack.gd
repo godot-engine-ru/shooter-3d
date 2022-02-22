@@ -19,7 +19,7 @@ func _physics_process(delta):
 		return
 	var xform: Transform = npc.global_transform
 	var lookat = player.global_transform.origin
-	lookat.y = npc.global_transform.origin.y
+#	lookat.y = npc.global_transform.origin.y
 	var distance = xform.origin.distance_squared_to(lookat)
 	if distance <= 8.0:
 		anim["parameters/state/playback"].travel("attack")
