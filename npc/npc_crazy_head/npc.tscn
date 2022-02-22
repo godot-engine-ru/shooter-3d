@@ -78,12 +78,12 @@ node_connections = [ "output", 0, "state" ]
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=4]
 
-[node name="KinematicBody" type="KinematicBody"]
+[node name="KinematicBody" type="KinematicBody" groups=["npc"]]
 
 [node name="headmonster" parent="." instance=ExtResource( 1 )]
 
 [node name="head" parent="headmonster/skeleton/Skeleton" index="3"]
-transform = Transform( 0.995999, 0.0888745, 0.0093993, -0.00177894, -0.0854361, 0.996342, 0.0893524, -0.992372, -0.0849361, 4.2076e-16, 0.736993, 0.064839 )
+transform = Transform( 0.999944, -0.0105456, -0.000219153, 0.000394309, 0.0166102, 0.999862, -0.0105405, -0.999807, 0.0166134, 8.93331e-09, 0.736993, 0.064839 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 1.23518, 0 )

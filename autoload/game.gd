@@ -33,6 +33,7 @@ signal ladder_entered
 signal ladder_exited
 
 func reload_game():
+	get_tree().call_group("npc", "free")
 	get_tree().reload_current_scene()
 
 

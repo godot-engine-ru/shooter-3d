@@ -27,7 +27,10 @@ func _physics_process(delta):
 	if run_teleport:
 		assert(teleport_to)
 		var data = load(teleport_to)
+		
+		get_tree().call_group("npc", "free")
 		get_tree().change_scene_to(data)
+
 
 func _process(delta):
 	var cam = get_viewport().get_camera()

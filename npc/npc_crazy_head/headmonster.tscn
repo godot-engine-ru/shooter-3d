@@ -8,7 +8,7 @@ extents = Vector3( 1, 0.504435, 0.819477 )
 [node name="headmonster" instance=ExtResource( 1 )]
 
 [node name="head" type="BoneAttachment" parent="skeleton/Skeleton" index="3"]
-transform = Transform( 1, -1.28109e-16, -1.84855e-18, -1.84851e-18, -0.0288529, 0.999584, -1.28109e-16, -0.999584, -0.0288529, 4.2076e-16, 0.736993, 0.064839 )
+transform = Transform( 0.992044, -0.125839, -0.0036323, -2.7896e-08, -0.0288529, 0.999584, -0.125891, -0.991631, -0.0286233, 4.2076e-16, 0.736993, 0.064839 )
 bone_name = "head"
 
 [node name="hitbox1" type="Area" parent="skeleton/Skeleton/head" index="0"]
