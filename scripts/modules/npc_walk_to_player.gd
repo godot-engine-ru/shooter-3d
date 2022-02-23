@@ -45,11 +45,13 @@ func _on_Timer_timeout():
 #	var closest_point:Vector3 = navigation.get_closest_point(player_.global_transform.origin)
 #	print("closest: ", closest_point.distance_squared_to(npc.global_transform.origin))
 	
-	path = navigation.get_simple_path(npc.global_transform.origin, player_.global_transform.origin)
+	if not Debug.stop_navigation:
 
-	if not path: # нужно ли
-		return
-	path_index = 0
+		path = navigation.get_simple_path(npc.global_transform.origin, player_.global_transform.origin)
+
+		if not path: # нужно ли
+			return
+		path_index = 0
 
 
 var dir:=Vector3.ZERO

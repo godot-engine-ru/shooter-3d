@@ -32,6 +32,8 @@ signal npc_state_changed(npc, state)
 signal ladder_entered
 signal ladder_exited
 
+signal node_ready(node)
+
 func reload_game():
 	get_tree().call_group("npc", "free")
 	get_tree().reload_current_scene()

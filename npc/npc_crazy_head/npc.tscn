@@ -1,8 +1,6 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://npc/npc_crazy_head/headmonster.tscn" type="PackedScene" id=1]
-[ext_resource path="res://fonts/DroidSansFallback.ttf" type="DynamicFontData" id=2]
-[ext_resource path="res://npc/npc_crazy_head/debug_label.gd" type="Script" id=3]
 
 [sub_resource type="SphereShape" id=1]
 radius = 0.741442
@@ -80,10 +78,6 @@ node_connections = [ "output", 0, "state" ]
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=4]
 
-[sub_resource type="DynamicFont" id=20]
-size = 40
-font_data = ExtResource( 2 )
-
 [node name="KinematicBody" type="KinematicBody" groups=["npc"]]
 
 [node name="headmonster" parent="." instance=ExtResource( 1 )]
@@ -92,7 +86,7 @@ font_data = ExtResource( 2 )
 bones/1/bound_children = [ NodePath("head") ]
 
 [node name="head" parent="headmonster/skeleton/Skeleton" index="3"]
-transform = Transform( 0.997563, -0.0695424, 0.00566651, -9.58085e-05, 0.0798482, 0.996807, -0.0697728, -0.994378, 0.079647, 4.2076e-16, 0.736993, 0.064839 )
+transform = Transform( 0.999944, -0.0105385, -1.15237e-05, 0.000663056, 0.0618224, 0.998087, -0.0105177, -0.998032, 0.0618259, -4.197e-09, 0.736993, 0.064839 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 1.23518, 0 )
@@ -108,16 +102,5 @@ parameters/state/playback = SubResource( 4 )
 parameters/state/attack/TimeScale/scale = 2.0
 parameters/state/idle/TimeScale/scale = 1.0
 parameters/state/run/run_speed/scale = 1.6
-
-[node name="Label" type="Label" parent="."]
-visible = false
-margin_right = 40.0
-margin_bottom = 14.0
-custom_fonts/font = SubResource( 20 )
-text = "npc"
-script = ExtResource( 3 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [editable path="headmonster"]

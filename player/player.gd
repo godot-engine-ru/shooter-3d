@@ -50,9 +50,12 @@ func _input(event):
 			Input.MOUSE_MODE_VISIBLE:
 				Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 				is_mouse_visible = false
+				get_tree().paused = false
+
 			Input.MOUSE_MODE_CAPTURED:
 				Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 				is_mouse_visible = true
+				get_tree().paused = true
 
 	#get mouse input for head rotation
 	if event is InputEventMouseMotion:

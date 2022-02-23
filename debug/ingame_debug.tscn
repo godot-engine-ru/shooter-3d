@@ -1,0 +1,36 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://debug/setting_checkbox.gd" type="Script" id=1]
+
+[node name="InGameDebug" type="Control"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="Control" parent="."]
+anchor_bottom = 1.0
+margin_right = 223.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_right = 297.0
+grow_vertical = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UseXray" type="CheckBox" parent="Control/VBoxContainer"]
+margin_right = 297.0
+margin_bottom = 24.0
+focus_mode = 0
+text = "x-ray"
+script = ExtResource( 1 )
+singleton = "Debug"
+prop = "use_xray"
