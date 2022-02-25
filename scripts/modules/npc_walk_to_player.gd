@@ -85,7 +85,6 @@ func _physics_process(delta):
 				use_navugation = true
 			state = 1
 		1:
-			state = 200 # для теста
 
 			var xform: Transform = npc.global_transform
 			var lookat = player.global_transform.origin

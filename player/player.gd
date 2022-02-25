@@ -87,6 +87,10 @@ func _physics_process(delta):
 				var fall_height = fall_start_height-translation.y
 				if fall_height>7:
 					var new_hp = clamp(hp-fall_height*2, 0, 100)
+					
+					if new_hp ==0:
+						Game.reload_game()
+					
 					Game.emit_signal("hp_changed", new_hp, hp)
 					hp = new_hp
 
