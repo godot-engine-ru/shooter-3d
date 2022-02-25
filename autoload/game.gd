@@ -21,6 +21,10 @@ enum NpcStates {
 	ATTACK,
 }
 
+signal hp_changed(new_hp, old_hp)
+
+var player:KinematicBody
+
 # gun_type = см. GunTypes
 signal shoot_gun(gun_type)
 
@@ -32,7 +36,6 @@ signal npc_state_changed(npc, state)
 signal ladder_entered
 signal ladder_exited
 
-signal node_ready(node)
 
 func reload_game():
 	get_tree().call_group("npc", "free")

@@ -28,7 +28,11 @@ var is_mouse_visible = false
 
 var is_on_ladder = false
 
+var hp = 100
+var fall_start_height:=0
+
 func _ready():
+	Game.player = self
 	#hides the cursor
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
@@ -75,7 +79,23 @@ func _physics_process(delta):
 		var f_input = Input.get_action_strength("move_backward") - Input.get_action_strength("move_forward")
 		var h_input = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
 		direction = Vector3(h_input, 0, f_input).rotated(Vector3.UP, h_rot).normalized()
-		
+
+
+		#======== падение и урон от него=====
+		if is_on_floor():
+			if fall_start_height:
+				var fall_height = fall_start_height-translation.y
+				if fall_height>7:
+					var new_hp = clamp(hp-fall_height*2, 0, 100)
+					Game.emit_signal("hp_changed", new_hp, hp)
+					hp = new_hp
+
+				fall_start_height = 0
+		else:
+			if not fall_start_height:
+				fall_start_height = translation.y
+		#=====================================
+
 		#jumping and gravity
 		if is_on_floor():
 			snap = -get_floor_normal()
