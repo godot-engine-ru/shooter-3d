@@ -28,11 +28,33 @@ var is_mouse_visible = false
 
 var is_on_ladder = false
 
-var hp = 100
+
 var fall_start_height:=0
 
-func _ready():
+
+# свойство, кот используем чтобы установить конкретный hp
+var hp:int setget setter_hp
+
+func setter_hp(new_hp:int):
+	var new_hp_real = clamp(new_hp, 0, 100)
+	
+	if new_hp_real <=0:
+		Game.emit_signal("hp_is_0")
+		Game.reload_game()
+	
+	Game.emit_signal("hp_changed", new_hp_real, hp)
+	hp = new_hp_real
+
+
+var weapon:Node
+
+
+func _enter_tree():
 	Game.player = self
+
+func _ready():
+	self.hp = 100
+	
 	#hides the cursor
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
@@ -41,6 +63,7 @@ func _ready():
 
 	Game.connect("ladder_entered", self, "on_ladder_entered")
 	Game.connect("ladder_exited", self, "on_ladder_exited")
+
 
 func on_ladder_entered():
 	is_on_ladder = true
@@ -81,24 +104,21 @@ func _physics_process(delta):
 		direction = Vector3(h_input, 0, f_input).rotated(Vector3.UP, h_rot).normalized()
 
 
-		#======== падение и урон от него=====
+		#======== падение и урон от него=================
 		if is_on_floor():
 			if fall_start_height:
 				var fall_height = fall_start_height-translation.y
 				if fall_height>7:
-					var new_hp = clamp(hp-fall_height*2, 0, 100)
-					
-					if new_hp ==0:
-						Game.reload_game()
-					
-					Game.emit_signal("hp_changed", new_hp, hp)
-					hp = new_hp
+					var damage = fall_height*2
+					print("урон от падения: ", damage)
+					self.hp -= damage
+
 
 				fall_start_height = 0
 		else:
 			if not fall_start_height:
 				fall_start_height = translation.y
-		#=====================================
+		#===============================================
 
 		#jumping and gravity
 		if is_on_floor():
@@ -119,8 +139,7 @@ func _physics_process(delta):
 		movement = velocity + gravity_vec
 		
 		move_and_slide_with_snap(movement, snap, Vector3.UP)
-	
-	
+
 
 
 func move_on_ladder():

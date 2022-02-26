@@ -37,6 +37,11 @@ func spawn_everything():
 						if s:
 							var script_node = s.new()
 							i.add_child(script_node)
+							
+							# установили начальный hp
+							# хотя свойством может быть удобнее, чем метой.
+							i.set_meta("hp", 100) 
+							
 					k.queue_free()
 				
 var spawn_delay = 0.0

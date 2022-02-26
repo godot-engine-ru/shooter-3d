@@ -83,7 +83,7 @@ node_connections = [ "output", 0, "state" ]
 [node name="headmonster" parent="." instance=ExtResource( 1 )]
 
 [node name="head" parent="headmonster/skeleton/Skeleton" index="3"]
-transform = Transform( 0.821558, 0.570035, 0.0101288, 0.074259, -0.124606, 0.989424, 0.565268, -0.812117, -0.144701, 4.2076e-16, 0.736993, 0.064839 )
+transform = Transform( 0.999944, -0.0105425, -0.000151566, 0.0009313, 0.0739956, 0.997258, -0.0105024, -0.997203, 0.0740013, -8.6209e-10, 0.736993, 0.064839 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 1.23518, 0 )

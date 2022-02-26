@@ -22,6 +22,7 @@ enum NpcStates {
 }
 
 signal hp_changed(new_hp, old_hp)
+signal hp_is_0
 
 var player:KinematicBody
 
@@ -36,6 +37,20 @@ signal npc_state_changed(npc, state)
 signal ladder_entered
 signal ladder_exited
 
+var current_weapon
+
+# варианты состояний стрельбы
+enum ShootStates {
+	CAN_SHOOT,
+	NO_AMMO,
+	NO_WEAPON,
+	RELOADING,
+	COOLDOWN,
+	
+}
+var shoot_state = ShootStates.CAN_SHOOT
+
+signal weapon_reload
 
 func reload_game():
 	get_tree().call_group("npc", "free")
@@ -49,3 +64,4 @@ func _input(event):
 	get_tree().set_input_as_handled()
 
 	reload_game()
+

@@ -50,10 +50,5 @@ func on_timeout():
 
 func make_damage():
 
-	var hp = Game.player.hp
-	var new_hp = max(0, hp-4)
-	Game.emit_signal("hp_changed", new_hp, hp)
-	Game.player.hp = new_hp
-	if new_hp ==0:
-		Game.reload_game()
+	Game.player.hp-=4
 	print("damage from npc")

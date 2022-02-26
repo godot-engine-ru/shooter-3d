@@ -5,7 +5,7 @@ onready var max_size = 68
 func _ready():
 	Game.connect("hp_changed", self, "on_hp")
 
-	update_hp(100)
+#	update_hp(100)
 
 
 

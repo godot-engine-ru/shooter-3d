@@ -42,7 +42,8 @@ func set_inaccuracity_no_anim(value):
 	
 
 func _ready():
-	
+	Game.connect("shoot_gun", self, "on_shoot")
+	Game.connect("weapon_reload", self, "on_weapon_reload")
 	
 	Game.connect("crosshair_entered_enemy", self, "on_crosshair_entered_enemy")
 	Game.connect("crosshair_exited_enemy", self, "on_crosshair_exited_enemy")
@@ -54,6 +55,13 @@ func _ready():
 	top_default = top.rect_position
 	right_default = right.rect_position
 	left_default = left.rect_position
+
+
+func on_shoot(_gun_type):
+	animate_cross_recoil()
+
+func on_weapon_reload():
+	animate_cross_reload()
 
 
 func on_crosshair_entered_enemy(collider):
@@ -86,13 +94,4 @@ func animate_cross_reload(time:=0.3):
 
 # why this is here?
 # move to player + add/emit signal - shoot
-func _input(event):
-	event = event as InputEventMouseButton
-	if not event or not event.is_pressed(): return
-	if Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE: return
-	match event.button_index:
-		BUTTON_LEFT:
-			animate_cross_recoil()
-			Game.emit_signal("shoot_gun", Game.GunTypes.AUTO)
-		BUTTON_RIGHT:
-			$"../AnimationPlayer".play("cross reload")
+

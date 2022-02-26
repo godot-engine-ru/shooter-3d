@@ -6,6 +6,7 @@ var recent_enemy_collider:Object
 func _process(delta):
 	if is_colliding():
 		var collider = get_collider()
+		if not collider: return
 		if !collider == recent_enemy_collider:
 			if collider.is_in_group("npc"):
 				Game.emit_signal("crosshair_entered_enemy", collider)
@@ -20,6 +21,9 @@ func _process(delta):
 		
 		
 		
-	if recent_enemy_collider and Input.is_action_just_pressed("primary_fire"):
-		if recent_enemy_collider.is_in_group("npc"):
-			recent_enemy_collider.queue_free()
+#	if recent_enemy_collider and Input.is_action_just_pressed("primary_fire"):
+#		if recent_enemy_collider.is_in_group("npc"):
+#
+#
+##				Game.emit_signal("weapon_shoot")
+#				Game.player.weapon.try_shoot()
