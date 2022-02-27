@@ -43,7 +43,7 @@ func set_inaccuracity_no_anim(value):
 
 func _ready():
 	Game.connect("shoot_gun", self, "on_shoot")
-	Game.connect("weapon_reload", self, "on_weapon_reload")
+	Game.connect("weapon_reload_started", self, "on_weapon_reload")
 	
 	Game.connect("crosshair_entered_enemy", self, "on_crosshair_entered_enemy")
 	Game.connect("crosshair_exited_enemy", self, "on_crosshair_exited_enemy")

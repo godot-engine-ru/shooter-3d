@@ -6,7 +6,7 @@ onready var raycast = $"../Camera/RayCast"
 onready var camera_shake_node = get_viewport().get_camera().get_node("Shake")
 
 var bullets:int setget setter_bullets, getter_bullets
-
+var max_bullets:int setget , getter_max_bullets
 
 func setter_bullets(val):
 	$WeaponHUD.bullets = val
@@ -14,16 +14,14 @@ func setter_bullets(val):
 func getter_bullets():
 	return $WeaponHUD.bullets
 
+func getter_max_bullets():
+	return $WeaponHUD.max_bullets
+	
+
 func try_shoot():
 
 	if !Game.shoot_state:
 		Game.emit_signal("shoot_gun", Game.GunTypes.AUTO)
-
-		if $WeaponHUD.bullets==0:
-			
-			Game.shoot_state = Game.ShootStates.NO_AMMO
-			print("no ammo")
-			return
 
 		camera_shake_node.is_shake = true
 		$WeaponHUD.bullets-=1
@@ -44,6 +42,13 @@ func try_shoot():
 		camera_shake_node.is_shake = false
 
 
+func try_reload():
+	
+	self.bullets = self.bullets
+	
+	if Game.shoot_state == Game.ShootStates.RELOADING: return
+	
+#	Game.emit_signal("weapon_reload_started")
 
 func _ready():
 	var player = Game.player
@@ -61,7 +66,7 @@ func _input(event):
 
 
 			BUTTON_RIGHT:
-				Game.emit_signal("weapon_reload")
+				try_reload()
 	else:
 		$Timer.stop()
 		camera_shake_node.is_shake = false

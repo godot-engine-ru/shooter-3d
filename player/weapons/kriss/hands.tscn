@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://player/weapons/kriss/Hand_D.material" type="Material" id=1]
 [ext_resource path="res://player/weapons/kriss/Vector_D.material" type="Material" id=2]
 [ext_resource path="res://player/weapons/kriss/Glove_D.material" type="Material" id=3]
+[ext_resource path="res://player/weapons/kriss/weapon_animations.gd" type="Script" id=4]
 
 [sub_resource type="ArrayMesh" id=1]
 resource_name = "OSG_Scene_Hand_Mesh_Hand_D_0"
@@ -922,3 +923,4 @@ anims/Draw = SubResource( 6 )
 anims/Hide = SubResource( 7 )
 anims/Reload = SubResource( 8 )
 anims/Shoot = SubResource( 9 )
+script = ExtResource( 4 )

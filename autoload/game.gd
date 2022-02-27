@@ -37,6 +37,10 @@ signal npc_state_changed(npc, state)
 signal ladder_entered
 signal ladder_exited
 
+signal weapon_reload_started
+signal weapon_reload_finished
+
+
 var current_weapon
 
 # варианты состояний стрельбы
@@ -49,8 +53,6 @@ enum ShootStates {
 	
 }
 var shoot_state = ShootStates.CAN_SHOOT
-
-signal weapon_reload
 
 # пул объектов, например боеприпасы:
 # игрок зашел в Area боеприпаса - получил патроны, сцену Ammo-бокса удалили из дерева
@@ -71,3 +73,18 @@ func _input(event):
 
 	reload_game()
 
+
+func _ready():
+	connect("weapon_reload_started", self, "_on_weapon_reload_started")
+	connect("weapon_reload_finished", self, "_on_weapon_reload_finished")
+
+
+func _on_weapon_reload_started():
+	shoot_state = ShootStates.RELOADING
+	
+
+func _on_weapon_reload_finished():
+	shoot_state = ShootStates.CAN_SHOOT
+
+
+		

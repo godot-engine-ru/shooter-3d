@@ -6,6 +6,7 @@ onready var parent = get_parent()
 
 func _on_body_entered(body):
 	if body.is_in_group("player"):
+		if body.hp == 100: return
 		body.hp +=25
 		body.get_node("HpAdded/AnimationPlayer").play("show")
 		respawn()

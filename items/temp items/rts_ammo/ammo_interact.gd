@@ -13,6 +13,9 @@ func _ready():
 
 func _on_body_entered(body):
 	if body.is_in_group("player"):
+		# don't take ammo if already full
+		if body.weapon.bullets ==body.weapon.max_bullets: return
+
 		body.weapon.bullets+=30
 		body.get_node("AmmoAdded/AnimationPlayer").play("show")
 		respawn() # заспавнить через n секунд
