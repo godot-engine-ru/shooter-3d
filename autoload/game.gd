@@ -52,6 +52,12 @@ var shoot_state = ShootStates.CAN_SHOOT
 
 signal weapon_reload
 
+# пул объектов, например боеприпасы:
+# игрок зашел в Area боеприпаса - получил патроны, сцену Ammo-бокса удалили из дерева
+# и добавляем ее напр по таймеру
+var pool = {}
+
+
 func reload_game():
 	get_tree().call_group("npc", "free")
 	get_tree().reload_current_scene()

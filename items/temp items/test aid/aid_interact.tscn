@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://items/temp items/test aid/aid.tscn" type="PackedScene" id=1]
+[ext_resource path="res://items/temp items/test aid/aid_interact.gd" type="Script" id=2]
+
+[sub_resource type="SphereShape" id=1]
+radius = 0.554655
+
+[node name="AidInteract" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="Area" type="Area" parent="." index="1"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Area" index="0"]
+shape = SubResource( 1 )
+
+[connection signal="body_entered" from="Area" to="." method="_on_body_entered"]

@@ -1,5 +1,7 @@
 extends Control
 
+
+
 # скрипт для Автомата Vector D
 
 var bullets:int setget setter_bullets
@@ -13,10 +15,11 @@ var bullets_left:int
 var clip_size = 30
 
 func setter_bullets(val:int):
-	if Game.shoot_state: # нужно ли, если уже есть проверка, при если юзать try_shoot
-		print("не могу стрелять")
-		return
 	val = max(val, 0)
+	
+	if not bullets and val>0 and Game.shoot_state == Game.ShootStates.NO_AMMO:
+		Game.shoot_state = 0 # can shoot
+	
 	var new_current = val%clip_size
 	
 	if new_current == 0 and val:

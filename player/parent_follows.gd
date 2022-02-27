@@ -1,7 +1,6 @@
 extends Node
 
 export(NodePath) var target_path
-export(String) var target_sub_path = 'Head'
 
 export(float) var follow_speed = 10
 
@@ -15,9 +14,13 @@ func _ready():
 	if not target_path: return
 	target = get_node_or_null(target_path)
 	if not target: return
-	if not target_sub_path: return
-	target = target.get_node(target_sub_path)
+
 
 
 func _physics_process(delta):
+	if follow_speed:
 		parent.global_transform = parent.global_transform.interpolate_with(target.global_transform, delta * follow_speed)
+	else:
+		return
+		var offset = Vector3(target.h_offset,0, target.v_offset)
+		parent.global_transform = target.global_transform.translated(offset)

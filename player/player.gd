@@ -58,7 +58,8 @@ func _ready():
 	#hides the cursor
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
-	$Camera.set_meta("player", self)
+#	$Camera.set_meta("player", self)
+	get_viewport().get_camera().set_meta("player", self)
 
 
 	Game.connect("ladder_entered", self, "on_ladder_entered")

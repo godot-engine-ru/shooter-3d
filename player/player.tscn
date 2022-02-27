@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://player/player.gd" type="Script" id=1]
 [ext_resource path="res://player/parent_follows.tscn" type="PackedScene" id=2]
@@ -9,6 +9,9 @@
 [ext_resource path="res://vfx/damage.tscn" type="PackedScene" id=7]
 [ext_resource path="res://ui/weapon_hud.tscn" type="PackedScene" id=8]
 [ext_resource path="res://weapon/weapon.gd" type="Script" id=9]
+[ext_resource path="res://vfx/ammo_added.tscn" type="PackedScene" id=10]
+[ext_resource path="res://vfx/hp_added.tscn" type="PackedScene" id=11]
+[ext_resource path="res://vfx/camera_shake.gd" type="Script" id=12]
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.5
@@ -17,6 +20,34 @@ height = 1.4
 [sub_resource type="CapsuleMesh" id=2]
 radius = 0.5
 mid_height = 1.5
+
+[sub_resource type="Animation" id=3]
+resource_name = "show"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 1, 1.6, 1.8, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.0392157 ), Color( 1, 1, 1, 0.00784314 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
 
 [node name="Player" type="KinematicBody" groups=["player"]]
 pause_mode = 2
@@ -40,21 +71,24 @@ mesh = SubResource( 2 )
 
 [node name="GunPivot" type="Spatial" parent="."]
 
-[node name="ParentFollowNode" parent="GunPivot" instance=ExtResource( 2 )]
-target_path = NodePath("../..")
-follow_speed = 14.0
-
 [node name="HandsAndVectorD" parent="GunPivot" instance=ExtResource( 3 )]
 transform = Transform( -0.00988689, 0.000283268, -0.00147282, 0.000145742, 0.009955, 0.0009363, 0.00149272, 0.000904244, -0.00984653, -0.003198, -1.52383, -0.303437 )
+
+[node name="ParentFollowNode" parent="GunPivot" instance=ExtResource( 2 )]
+target_path = NodePath("../../Head")
+follow_speed = 16.0
 
 [node name="Camera" type="Camera" parent="."]
 current = true
 
-[node name="RayCast" parent="Camera" instance=ExtResource( 5 )]
-
 [node name="ParentFollowNode" parent="Camera" instance=ExtResource( 2 )]
-target_path = NodePath("../..")
+target_path = NodePath("../../Head")
 follow_speed = 15.0
+
+[node name="Shake" type="Node" parent="Camera"]
+script = ExtResource( 12 )
+
+[node name="RayCast" parent="Camera" instance=ExtResource( 5 )]
 
 [node name="Crosshair" parent="." instance=ExtResource( 4 )]
 
@@ -66,3 +100,17 @@ follow_speed = 15.0
 script = ExtResource( 9 )
 
 [node name="WeaponHUD" parent="Weapon" instance=ExtResource( 8 )]
+
+[node name="Timer" type="Timer" parent="Weapon"]
+wait_time = 0.1
+
+[node name="HpAdded" parent="." instance=ExtResource( 11 )]
+
+[node name="AmmoAdded" parent="." instance=ExtResource( 10 )]
+
+[node name="AnimationPlayer" parent="AmmoAdded" index="0"]
+anims/show = SubResource( 3 )
+
+[connection signal="timeout" from="Weapon/Timer" to="Weapon" method="_on_timeout"]
+
+[editable path="AmmoAdded"]
