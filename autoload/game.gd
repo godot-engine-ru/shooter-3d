@@ -24,6 +24,9 @@ enum NpcStates {
 signal hp_changed(new_hp, old_hp)
 signal hp_is_0
 
+
+signal npc_dead(npc)
+
 var player:KinematicBody
 
 # gun_type = см. GunTypes

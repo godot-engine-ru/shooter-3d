@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/scene.gltf-e94ad53fb0c13d53807a86fab802359e.scn"
+path="res://.import/scene.gltf-16633b5d8d1b84797914516833b1f443.scn"
 
 [deps]
 
-source_file="res://npc/temp npc/zombie_ded/scene.gltf"
-dest_files=[ "res://.import/scene.gltf-e94ad53fb0c13d53807a86fab802359e.scn" ]
+source_file="res://npc/npc_zombie_ded/scene.gltf"
+dest_files=[ "res://.import/scene.gltf-16633b5d8d1b84797914516833b1f443.scn" ]
 
 [params]
 

@@ -15,8 +15,9 @@ func _ready():
 
 	var timer = Timer.new()
 	add_child(timer)
-	timer.connect("timeout", self, "_on_Timer_timeout")
-	timer.wait_time = rand_range(0.5, 5)
+	timer.connect("timeout", self, "_on_Timer_timeout", [timer])
+#	timer.wait_time = rand_range(0.3, 15)
+	timer.wait_time = 0.5
 	timer.start()
 	
 	player_ = get_tree().get_nodes_in_group("player")[0]
@@ -38,9 +39,10 @@ var path = []
 var path_index = 0
 
 
-func _on_Timer_timeout():
+func _on_Timer_timeout(timer:Timer):
 	if not is_instance_valid(navigation): return
-	
+#	timer.wait_time = rand_range(0.3, 15)
+
 #	может пригодится
 #	var closest_point:Vector3 = navigation.get_closest_point(player_.global_transform.origin)
 #	print("closest: ", closest_point.distance_squared_to(npc.global_transform.origin))
@@ -118,4 +120,6 @@ func _physics_process(delta):
 					var c = a.slerp(b, 0.08)
 					npc.transform.basis = Basis(c)
 
-
+					anim["parameters/state/playback"].travel("run")
+			else:
+				anim["parameters/state/playback"].travel("idle")

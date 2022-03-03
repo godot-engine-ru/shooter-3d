@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/deformedobj.obj-5f86bfb9322fd36b68c0f921abf70e7a.mesh"
+
+[deps]
+
+files=[ "res://.import/deformedobj.obj-5f86bfb9322fd36b68c0f921abf70e7a.mesh" ]
+
+source_file="res://vfx/deformedobj.obj"
+dest_files=[ "res://.import/deformedobj.obj-5f86bfb9322fd36b68c0f921abf70e7a.mesh", "res://.import/deformedobj.obj-5f86bfb9322fd36b68c0f921abf70e7a.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

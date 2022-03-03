@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/zombie_metallic_roughness.png-0599131a16ebc6060fac7a9d97efaa75.s3tc.stex"
-path.etc2="res://.import/zombie_metallic_roughness.png-0599131a16ebc6060fac7a9d97efaa75.etc2.stex"
+path.s3tc="res://.import/zombie_normal.png-507ad20da9d2e07d63c5e356f61a827a.s3tc.stex"
+path.etc2="res://.import/zombie_normal.png-507ad20da9d2e07d63c5e356f61a827a.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://npc/temp npc/zombie_ded/textures/zombie_metallic_roughness.png"
-dest_files=[ "res://.import/zombie_metallic_roughness.png-0599131a16ebc6060fac7a9d97efaa75.s3tc.stex", "res://.import/zombie_metallic_roughness.png-0599131a16ebc6060fac7a9d97efaa75.etc2.stex" ]
+source_file="res://npc/npc_zombie_ded/textures/zombie_normal.png"
+dest_files=[ "res://.import/zombie_normal.png-507ad20da9d2e07d63c5e356f61a827a.s3tc.stex", "res://.import/zombie_normal.png-507ad20da9d2e07d63c5e356f61a827a.etc2.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/mode=2
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
-compress/normal_map=0
+compress/normal_map=1
 flags/repeat=true
 flags/filter=true
 flags/mipmaps=true

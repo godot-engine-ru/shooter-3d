@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/zombie_base_color.png-6c60fb66b158b8edfb83d10b6cddae07.s3tc.stex"
-path.etc2="res://.import/zombie_base_color.png-6c60fb66b158b8edfb83d10b6cddae07.etc2.stex"
+path.s3tc="res://.import/zombie_metallic_roughness.png-2f63af960b076f512849cb8903696b57.s3tc.stex"
+path.etc2="res://.import/zombie_metallic_roughness.png-2f63af960b076f512849cb8903696b57.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://npc/temp npc/zombie_ded/textures/zombie_base_color.png"
-dest_files=[ "res://.import/zombie_base_color.png-6c60fb66b158b8edfb83d10b6cddae07.s3tc.stex", "res://.import/zombie_base_color.png-6c60fb66b158b8edfb83d10b6cddae07.etc2.stex" ]
+source_file="res://npc/npc_zombie_ded/textures/zombie_metallic_roughness.png"
+dest_files=[ "res://.import/zombie_metallic_roughness.png-2f63af960b076f512849cb8903696b57.s3tc.stex", "res://.import/zombie_metallic_roughness.png-2f63af960b076f512849cb8903696b57.etc2.stex" ]
 
 [params]
 
@@ -25,7 +25,7 @@ flags/repeat=true
 flags/filter=true
 flags/mipmaps=true
 flags/anisotropic=false
-flags/srgb=1
+flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false

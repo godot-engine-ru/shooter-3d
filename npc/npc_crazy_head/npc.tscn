@@ -70,7 +70,7 @@ start_node = "idle"
 end_node = "attack"
 
 [sub_resource type="AnimationNodeBlendTree" id=2]
-graph_offset = Vector2( 436.867, 130.122 )
+graph_offset = Vector2( 250.867, 59.122 )
 nodes/output/position = Vector2( 740, 160 )
 nodes/state/node = SubResource( 3 )
 nodes/state/position = Vector2( 365, 131 )
@@ -83,7 +83,7 @@ node_connections = [ "output", 0, "state" ]
 [node name="headmonster" parent="." instance=ExtResource( 1 )]
 
 [node name="head" parent="headmonster/skeleton/Skeleton" index="3"]
-transform = Transform( 0.999996, 0.00224723, -0.00160346, 0.00143773, 0.0719069, 0.99741, 0.00235671, -0.997409, 0.0719034, 4.2076e-16, 0.736993, 0.064839 )
+transform = Transform( 0.987874, -0.155076, 0.00745456, -0.00537744, 0.0138094, 0.99989, -0.155162, -0.987806, 0.012808, 4.2076e-16, 0.736993, 0.064839 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 1.23518, 0 )
