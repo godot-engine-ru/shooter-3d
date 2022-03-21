@@ -1,0 +1,134 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://fonts/Arkhip_font.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://ui/button.gd" type="Script" id=2]
+[ext_resource path="res://default_buttongroup.tres" type="ButtonGroup" id=3]
+
+[sub_resource type="DynamicFont" id=4]
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxLine" id=9]
+content_margin_left = 40.0
+color = Color( 0.92549, 0.27451, 0.27451, 1 )
+thickness = 0
+
+[sub_resource type="StyleBoxLine" id=14]
+content_margin_left = 40.0
+color = Color( 0.92549, 0.27451, 0.27451, 1 )
+
+[sub_resource type="DynamicFont" id=10]
+size = 22
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="Animation" id=11]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Button/Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("..:rect_scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=12]
+resource_name = "blink"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=13]
+resource_name = "rect_scale"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/path = NodePath("..:rect_scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.3, 1.3 ) ]
+}
+
+[node name="Button" type="Button"]
+margin_right = 160.0
+margin_bottom = 50.0
+grow_horizontal = 2
+rect_min_size = Vector2( 160, 50 )
+custom_colors/font_color_focus = Color( 1, 0.768627, 0.376471, 1 )
+custom_colors/font_color = Color( 1, 0.768627, 0.376471, 1 )
+custom_colors/font_color_hover = Color( 1, 0.835294, 0.556863, 1 )
+custom_colors/font_color_pressed = Color( 1, 0.768627, 0.376471, 1 )
+custom_fonts/font = SubResource( 4 )
+custom_styles/hover = SubResource( 9 )
+custom_styles/pressed = SubResource( 14 )
+custom_styles/focus = SubResource( 14 )
+custom_styles/normal = SubResource( 9 )
+group = ExtResource( 3 )
+text = "ЕЩЕ РАЗ"
+align = 0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 160, 50 )
+custom_colors/font_color = Color( 1, 0.768627, 0.376471, 1 )
+custom_fonts/font = SubResource( 10 )
+text = ">"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Label"]
+anims/RESET = SubResource( 11 )
+anims/blink = SubResource( 12 )
+anims/rect_scale = SubResource( 13 )

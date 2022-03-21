@@ -51,4 +51,3 @@ func on_timeout():
 func make_damage():
 
 	Game.player.hp-=4
-	print("damage from npc")

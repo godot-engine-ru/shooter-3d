@@ -40,7 +40,8 @@ func setter_hp(new_hp:int):
 	
 	if new_hp_real <=0:
 		Game.emit_signal("hp_is_0")
-		Game.reload_game()
+		Game.emit_signal("game_over") # нужен ли hp_is_0 если есть этот сигнал 
+#		Game.reload_game()
 	
 	Game.emit_signal("hp_changed", new_hp_real, hp)
 	hp = new_hp_real
@@ -111,7 +112,6 @@ func _physics_process(delta):
 				var fall_height = fall_start_height-translation.y
 				if fall_height>7:
 					var damage = fall_height*2
-					print("урон от падения: ", damage)
 					self.hp -= damage
 
 

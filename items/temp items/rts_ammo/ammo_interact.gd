@@ -23,10 +23,8 @@ func _on_body_entered(body):
 
 
 func respawn():
-	
 	yield(get_tree().create_timer(ammo_respawn_delay), "timeout")
 	if not is_instance_valid(parent):
-		print("instance not valid")
 		return
 	parent.add_child(owner)
 

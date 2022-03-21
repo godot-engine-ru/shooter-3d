@@ -27,6 +27,9 @@ signal hp_is_0
 
 signal npc_dead(npc)
 
+signal game_over
+
+
 var player:KinematicBody
 
 # gun_type = см. GunTypes
@@ -61,7 +64,6 @@ var shoot_state = ShootStates.CAN_SHOOT
 # игрок зашел в Area боеприпаса - получил патроны, сцену Ammo-бокса удалили из дерева
 # и добавляем ее напр по таймеру
 var pool = {}
-
 
 func reload_game():
 	get_tree().call_group("npc", "free")

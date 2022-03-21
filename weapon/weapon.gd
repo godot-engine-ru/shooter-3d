@@ -51,7 +51,6 @@ func try_shoot():
 				
 #				rigid.get_parent().remove_child(rigid)
 #				npc.get_parent().add_child(rigid)
-#				print(rigid)
 		
 		else:
 			npc.get_node("Particles").emitting = true
