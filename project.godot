@@ -30,6 +30,7 @@ window/stretch/aspect="expand"
 
 [gui]
 
+theme/custom_font="res://fonts/main_font.tres"
 common/snap_controls_to_pixels=false
 
 [input]

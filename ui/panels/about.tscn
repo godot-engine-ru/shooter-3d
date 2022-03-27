@@ -1,0 +1,52 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://fonts/main_font.tres" type="DynamicFont" id=1]
+[ext_resource path="res://ui/rich_text_label_colors.gd" type="Script" id=2]
+
+[node name="About" type="VBoxContainer"]
+margin_left = 305.0
+margin_top = 92.0
+margin_right = 718.0
+margin_bottom = 508.0
+custom_constants/separation = 15
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_right = 413.0
+margin_bottom = 101.0
+custom_colors/font_color = Color( 1, 0.768627, 0.376471, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Зомби Шутер: Мясорубка
+2022
+Сделано в Godot Engine
+учстниками Godot Ru дискорд сервера"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_top = 116.0
+margin_right = 413.0
+margin_bottom = 416.0
+rect_min_size = Vector2( 0, 300 )
+custom_colors/default_color = Color( 0.866667, 0.866667, 0.866667, 1 )
+custom_fonts/normal_font = ExtResource( 1 )
+bbcode_enabled = true
+bbcode_text = "
+[color=#ed1c24]pigzinzspace:[/color] [color=#7f6d6d]геймдизайн[/color]
+[color=#ed1c24]me2beats:[/color] [color=#7f6d6d]код, саундтрек, менеджмент проекта[/color]
+[color=#ed1c24]slapin:[/color] [color=#7f6d6d]код[/color]
+[color=#ed1c24]soundsbeard:[/color] [color=#7f6d6d]3D[/color]
+[color=#ed1c24]Абдурахман:[/color] [color=#7f6d6d]3D[/color]
+[color=#ed1c24]Gamma:[/color] [color=#7f6d6d]2D[/color]
+[color=#ed1c24]Polis:[/color] [color=#7f6d6d]2D[/color]
+"
+text = "
+pigzinzspace: геймдизайн
+me2beats: код, саундтрек, менеджмент проекта
+slapin: код
+soundsbeard: 3D
+Абдурахман: 3D
+Gamma: 2D
+Polis: 2D
+"
+script = ExtResource( 2 )

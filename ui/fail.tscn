@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://ui/buttons/back_to_menu.tscn" type="PackedScene" id=2]
+[ext_resource path="res://ui/buttons/play.tscn" type="PackedScene" id=3]
+[ext_resource path="res://ui/menu_base.tscn" type="PackedScene" id=4]
+
+[node name="Fail" instance=ExtResource( 4 )]
+__meta__ = {
+"_edit_horizontal_guides_": [ 2469.0 ],
+"_edit_use_anchors_": false,
+"_editor_description_": "fail page"
+}
+
+[node name="Play" parent="MarginContainer/ButtonsContainer" index="0" instance=ExtResource( 3 )]
+
+[node name="BackToMenu" parent="MarginContainer/ButtonsContainer" index="1" instance=ExtResource( 2 )]
+margin_top = 52.0
+margin_bottom = 102.0

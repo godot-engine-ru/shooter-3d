@@ -1,0 +1,97 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://fonts/Arkhip_font.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://fonts/Exo2-SemiBoldExpanded.otf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=2]
+size = 60
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+extra_spacing_char = 20
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=1]
+size = 30
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 18
+font_data = ExtResource( 2 )
+
+[node name="FailPanel" type="VBoxContainer"]
+margin_left = 359.0
+margin_top = 238.0
+margin_right = 664.0
+margin_bottom = 362.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_right = 305.0
+margin_bottom = 73.0
+custom_colors/font_color = Color( 0.627451, 0.188235, 0.188235, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "ФЕЙЛ"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="."]
+visible = false
+margin_top = 77.0
+margin_right = 305.0
+margin_bottom = 114.0
+custom_fonts/font = SubResource( 1 )
+text = "Не  судьба"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="."]
+visible = false
+margin_top = 77.0
+margin_right = 319.0
+margin_bottom = 100.0
+custom_fonts/font = SubResource( 3 )
+text = "С легкостью пойман зомбями"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label4" type="Label" parent="."]
+visible = false
+margin_top = 77.0
+margin_right = 389.0
+margin_bottom = 100.0
+custom_fonts/font = SubResource( 3 )
+text = "Не завидую вашему финтес тренеру"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label5" type="Label" parent="."]
+margin_top = 77.0
+margin_right = 305.0
+margin_bottom = 100.0
+custom_colors/font_color = Color( 0.498039, 0.427451, 0.427451, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "Зомби оказались проворнее"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="Control" parent="."]
+margin_top = 104.0
+margin_right = 305.0
+margin_bottom = 124.0
+rect_min_size = Vector2( 0, 20 )

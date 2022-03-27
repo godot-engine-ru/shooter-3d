@@ -29,9 +29,7 @@ func setter_active(val:bool):
 			recently_pressed.get_node("Label").visible = false
 			recently_pressed.player.play_backwards("rect_scale")
 
-#			yield(recently_pressed.player, "animation_finished")
-#			get_parent().update()
-	
+
 		$Label.visible = true
 #		rect_scale.x = 1.5
 #		rect_scale.y = 1.1
@@ -42,13 +40,14 @@ func setter_active(val:bool):
 
 
 
-#		if not recently_pressed:
-#			recently_pressed = self
-
-
 func _pressed():
 	self.active = true
 	recent[0] = self
-#	group.set_meta("recently_pressed", self)
+
+	# 'эти 3 строки повторяются в другом скрипте, можно вынести
+	var panel_container = $"../../../PanelContainer"
+	if panel_container.get_child_count():
+		panel_container.get_child(0).queue_free()
+	
 
 
