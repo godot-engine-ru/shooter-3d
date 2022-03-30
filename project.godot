@@ -12,7 +12,7 @@ config_version=4
 
 config/name="Shooter1"
 config/description="проект из гита"
-run/main_scene="res://level/test_level2_nav.tscn"
+run/main_scene="res://autoload/menu.tscn"
 run/flush_stdout_on_print=true
 config/icon="res://icon.png"
 
@@ -27,6 +27,10 @@ Menu="*res://autoload/menu.tscn"
 
 window/stretch/mode="2d"
 window/stretch/aspect="expand"
+
+[global]
+
+main=false
 
 [gui]
 

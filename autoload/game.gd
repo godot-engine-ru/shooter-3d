@@ -67,7 +67,8 @@ var pool = {}
 
 func reload_game():
 	get_tree().call_group("npc", "free")
-	get_tree().reload_current_scene()
+#	get_tree().reload_current_scene()
+	get_tree().change_scene("res://level/test_level2_nav.tscn")
 
 
 func _input(event):

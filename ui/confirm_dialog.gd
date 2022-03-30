@@ -18,4 +18,3 @@ func _ready():
 
 	get_label().align = Label.ALIGN_CENTER
 	get_label().valign = Label.VALIGN_CENTER
-

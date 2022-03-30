@@ -1,7 +1,11 @@
 extends Control
 
+var is_popup_opened = false
+
 
 func _ready():
+	visible = true
+
 	Game.connect("game_over", self, "on_gameover")
 
 
@@ -29,12 +33,14 @@ func on_gameover():
 #	Engine.time_scale = 1.0
 
 func show_gameover():
+	remove_child(get_children()[-1])
+	add_child(preload("res://ui/fail.tscn").instance())
+	
 	yield(get_tree(),"idle_frame")
 	if not visible:
 		visible = true
 	
-	
-	get_children()[-1].show()
+#	get_children()[-1].show()
 
 
 
@@ -50,7 +56,9 @@ func change_page_to(scene_filename:String, anim_back: = false):
 
 #	yield(get_tree().create_timer(0.5),"timeout")
 	var scene:Control = load(scene_filename).instance()
-	scene.margin_left = rect_size.x
+	var start_x = rect_size.x if not anim_back else -rect_size.x
+	
+	scene.margin_left = start_x
 	scene.rect_scale = Vector2.ONE*scale_multiplier
 	scene.modulate.a = 0.0
 #	scene.rect_position.x = rect_size.x
@@ -59,7 +67,7 @@ func change_page_to(scene_filename:String, anim_back: = false):
 	add_child(scene)
 	
 #	set_as_toplevel(1)
-	$Tween.interpolate_property(recent_page, "rect_position:x", 0, -rect_size.x, trans_time, trans, Tween.EASE_IN_OUT)
+	$Tween.interpolate_property(recent_page, "rect_position:x", 0, -start_x, trans_time, trans, Tween.EASE_IN_OUT)
 	$Tween.interpolate_property(recent_page, "rect_scale", Vector2.ONE, Vector2.ONE*scale_multiplier, trans_time, trans, Tween.EASE_IN_OUT)
 	$Tween.interpolate_property(recent_page, "modulate:a", 1.0, 0.0, trans_time*opacity_multiplier, trans, Tween.EASE_IN_OUT)
 	$Tween.interpolate_property(scene, "margin_left", scene.margin_left, 0, trans_time, trans, Tween.EASE_IN_OUT)

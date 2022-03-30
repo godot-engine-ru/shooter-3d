@@ -83,9 +83,9 @@ tracks/0/keys = {
 
 [node name="Play" type="Button"]
 margin_right = 160.0
-margin_bottom = 50.0
+margin_bottom = 30.0
 grow_horizontal = 2
-rect_min_size = Vector2( 160, 50 )
+rect_min_size = Vector2( 160, 40 )
 custom_colors/font_color_focus = Color( 1, 0.768627, 0.376471, 1 )
 custom_colors/font_color = Color( 1, 0.768627, 0.376471, 1 )
 custom_colors/font_color_hover = Color( 1, 0.835294, 0.556863, 1 )
@@ -107,7 +107,6 @@ __meta__ = {
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-rect_min_size = Vector2( 160, 50 )
 custom_colors/font_color = Color( 1, 0.768627, 0.376471, 1 )
 custom_fonts/font = SubResource( 10 )
 text = ">"

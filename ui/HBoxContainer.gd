@@ -19,9 +19,12 @@ func get_focused_idx():
 	return -1
 
 func _input(event):
+	
 	event = event as InputEventKey
 	if !event or !event.pressed: return
 
+	if not Menu.visible: return
+	if Menu.is_popup_opened: return
 
 	if event.is_action("ui_down"):
 		
